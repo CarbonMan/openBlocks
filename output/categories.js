@@ -1,3 +1,3 @@
-IOTKEY.on("load toolbox categories", function(ev){
-  $("<category name='Display'></category>").appendTo(ev.toolbox);
+T$.on("load toolbox categories", function(ev){
+  $("<category name='" + T$.i18n['Display'] + "'></category>").appendTo(ev.toolbox);
 });
