@@ -1,4 +1,4 @@
-T$.i18n = $.extend(T$.i18n, {
+T$.L10n = $.extend(T$.L10n, {
   'Display': 'Display',
   "Line chart": "Line chart",
   "Chart title": "Chart title",
