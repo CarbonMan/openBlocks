@@ -1,6 +1,12 @@
 /**
 * Generate an jqPlot chart statement
 */
+IOTKEY.on("load toolbox blocks", function(ev){
+    var cat = $("category[name='Display']");
+    if (cat){
+        $('<block type="line_chart"></block>').appendTo(cat);
+    }
+});
 
 /**
 * Chart statements
