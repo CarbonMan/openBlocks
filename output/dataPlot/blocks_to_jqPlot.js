@@ -2,7 +2,7 @@
 * Generate an jqPlot chart statement
 */
 T$.on("load toolbox blocks", function(ev){
-    var cat = $("category[name='" + T$.i18n('Display') + "']");
+    var cat = ev.toobox.find("category[name='" + T$.i18n('Display') + "']");
     if (cat.length){
         $('<block type="line_chart"></block>').appendTo(cat);
         $('<block type="series_label"></block>').appendTo(cat);
