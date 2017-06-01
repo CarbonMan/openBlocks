@@ -7,7 +7,7 @@
   <component>
 	  <location>nlSql</location>
     <!-- The language part will default to en if a match cannot be found -->
-    <language>nlSqlBlocks_{locale}.js</language>
+    <locale>nlSqlBlocks_{locale}.js</locale>
     <file>nlSqlBlocks.js</file>
 		<file>nlSqlBlocks_{language}.js</file>
     <!-- The target template -->
