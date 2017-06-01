@@ -12,7 +12,7 @@
 		<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
 		<file>categories.js</file>
 		<!-- The language part will default to en if a match cannot be found -->
-		<language>categories_{locale}.js</language>
+		<locale>categories_{locale}.js</locale>
 		<!-- The target template -->
 		<template>index.html.template</template>
   </component>
