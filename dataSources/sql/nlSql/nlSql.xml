@@ -1,0 +1,16 @@
+<xml>
+  <type>feature</type>
+  <title>Natural Language SQL interface</title>
+  <description>Reads a dictionary to create a natural query interface</description>
+	<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
+  <location>blocklyCode</location>
+  <component>
+	  <location>nlSql</location>
+    <!-- The language part will default to en if a match cannot be found -->
+    <language>nlSql_{language}.js</language>
+    <file>nlsql.js</file>
+    <!-- The target template -->
+    <template>index.html.template</template>
+  </component>
+    
+</xml>
