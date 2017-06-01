@@ -31,7 +31,7 @@ Blockly.Blocks['codeBlock'] = {
 Blockly.JavaScript['codeBlock'] = function (block) {
     var code = Blockly.JavaScript.statementToCode(block, 'contained_code');
     var ev = {
-        context: block.IOTKEY.context,
+        context: block.T$.context,
         outputType: "string",
         type: "javascript",
         code: code
