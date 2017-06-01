@@ -11,8 +11,9 @@
 	  <location>mixin</location>
 		<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
 		<file>baseBlock.js</file>
+		<file>baseBlock_{language}.js</file>
 		<!-- The language part will default to en if a match cannot be found -->
-		<language>baseBlock_{locale}.js</language>
+		<locale>baseBlock_{locale}.js</locale>
 		<!-- The target template -->
 		<template>index.html.template</template>
   </component>
