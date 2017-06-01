@@ -1,6 +1,13 @@
 /**
 * Requires eventTarget.js
 */
+T$.on("load toolbox categories", function(ev){
+  var cat = ev.toolbox.find("category[name='" + T$.i18n('Block') + "']");
+  if (!cat.length) 
+      cat = $("<category name='" + T$.i18n('Block') + "'></category>").appendTo(ev.toolbox);
+  $('<block type="codeBlock"></block>').appendTo(cat);
+});
+
 Blockly.Blocks['codeBlock'] = {
     init: function () {
         this.appendStatementInput("contained_code")
@@ -19,4 +26,22 @@ Blockly.Blocks['codeBlock'] = {
         };
         eventHandler(this.T$);
     }
+};
+
+Blockly.JavaScript['codeBlock'] = function (block) {
+    var code = Blockly.JavaScript.statementToCode(block, 'contained_code');
+    var ev = {
+        context: block.IOTKEY.context,
+        outputType: "string",
+        type: "javascript",
+        code: code
+    };
+    // Allow blocks (such as nlsql_verbal_output to restructure the code)
+    block.IOTKEY.fire("generate", ev)
+    console.log(ev.code);
+    // The type can be set to hub/nlSql meaning it is to be executed on the hub
+    return "<codeBlock type='" + ev.type + "' id='" + escape(block.id) + "'" +
+        " outputType='" + ev.outputType + "'>" +
+        escape(ev.code) +
+        "</codeBlock>";
 };
