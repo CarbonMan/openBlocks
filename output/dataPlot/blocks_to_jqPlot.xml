@@ -8,7 +8,7 @@
 	  <location>mixin</location>
     <file>blocks_to_jqPlot.js</file>
     <!-- The language part will default to en if a match cannot be found -->
-    <language>blocks_to_jqPlot_{language}.js</language>
+    <language>blocks_to_jqPlot_{locale}.js</language>
     <!-- The target template -->
     <template>index.html.template</template>
   </component>
