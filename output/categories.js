@@ -1,3 +1,5 @@
 T$.on("load toolbox categories", function(ev){
-  $("<category name='" + T$.i18n('Display') + "'></category>").appendTo(ev.toolbox);
+  var cat = ev.toolbox.find("category[name='" + T$.i18n('Display') + "']");
+  if (!cat.length)
+    $("<category name='" + T$.i18n('Display') + "'></category>").appendTo(ev.toolbox);
 });
