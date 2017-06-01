@@ -1,0 +1,20 @@
+<xml>
+  <type>feature</type>
+  <title>Base block for asynchronous coding</title>
+  <description>Sets a toolbox category that blocks can attach to</description>
+	<!-- 
+		This is the default target for any components within this feature. Commponents are loaded relative to this.
+	-->
+  <location>blocklyCode</location>
+  
+  <component>
+	  <location>mixin</location>
+		<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
+		<file>baseBlock.js</file>
+		<!-- The language part will default to en if a match cannot be found -->
+		<language>baseBlock.js_{language}.js</language>
+		<!-- The target template -->
+		<template>index.html.template</template>
+  </component>
+    
+</xml>
