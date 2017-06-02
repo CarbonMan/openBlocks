@@ -62,7 +62,7 @@ Blockly.JavaScript['line_chart'] = function (block) {
     var firstcolumnxaxisticks = block.getFieldValue('firstColumnXaxisTicks') == 'TRUE';
     var statements_labels = Blockly.JavaScript.statementToCode(block, 'labels');
     // Convert the data from the dataBlock to a data series 
-    var code = 'var cb = IOTKEY.codeBlocks;\n';
+    var code = 'var cb = T$.codeBlocks;\n';
     code += 'var dataSeries = cb.outputIntoSeries({' +
         'context: this,' +
         'firstColumnXaxisTicks:' + (firstcolumnxaxisticks ? "true" : "false") +
