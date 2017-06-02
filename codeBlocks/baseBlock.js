@@ -5,7 +5,9 @@ T$.on("load toolbox categories", function(ev){
   var cat = ev.toolbox.find("category[name='" + T$.i18n('Block') + "']");
   if (!cat.length) 
       cat = $("<category name='" + T$.i18n('Block') + "'></category>").appendTo(ev.toolbox);
-  $('<block type="codeBlock"></block>').appendTo(cat);
+  var blk = cat.find('block[type="codeBlock"]');
+  if (!blk.length)
+    $('<block type="codeBlock"></block>').appendTo(cat);
 });
 
 Blockly.Blocks['codeBlock'] = {
