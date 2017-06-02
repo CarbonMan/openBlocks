@@ -25,36 +25,48 @@ $(function () {
     var newCat = qryCat.find("category[name='" + T$.i18n('Information request') + "']");
     if (!newCat.length) 
         newCat = $("<category name='" + T$.i18n('Information request') + "'></category>").appendTo(qryCat);
-    Blockly.Blocks['nlsql'].T$_toolbox(newCat);
+    var blk = cat.find('block[type="nlsql"]');
+    if (!blk.length)
+      Blockly.Blocks['nlsql'].T$_toolbox(newCat);
     
     // Columns to retrieve
     newCat = qryCat.find("category[name='" + T$.i18n('Columns to retrieve') + "']");
     if (!newCat.length) 
         newCat = $("<category name='" + T$.i18n('Columns to retrieve') + "'></category>").appendTo(qryCat);
-    Blockly.Blocks['nlsql_select_field'].T$_toolbox(newCat);
-    Blockly.Blocks['nlsql_column_as'].T$_toolbox(newCat);
-    Blockly.Blocks['nlsql_select_field_as'].T$_toolbox(newCat);
+    var blk = cat.find('block[type="nlsql_select_field"]');
+    if (!blk.length){
+      Blockly.Blocks['nlsql_select_field'].T$_toolbox(newCat);
+      Blockly.Blocks['nlsql_column_as'].T$_toolbox(newCat);
+      Blockly.Blocks['nlsql_select_field_as'].T$_toolbox(newCat);
+    }
     
     // Queries
     newCat = qryCat.find("category[name='" + T$.i18n('Queries') + "']");
     if (!newCat.length) 
         newCat = $("<category name='" + T$.i18n('Queries') + "'></category>").appendTo(qryCat);
-    Blockly.Blocks['nlsql_query'].T$_toolbox(newCat);
+    var blk = cat.find('block[type="nlsql_query"]');
+    if (!blk.length)
+      Blockly.Blocks['nlsql_query'].T$_toolbox(newCat);
     
     // Expressions
     newCat = qryCat.find("category[name='" + T$.i18n('Expressions') + "']");
     if (!newCat.length) 
         newCat = $("<category name='" + T$.i18n('Expressions') + "'></category>").appendTo(qryCat);
-    Blockly.Blocks['nlsql_field'].T$_toolbox(newCat);
+    var blk = cat.find('block[type="nlsql_field"]');
+    if (!blk.length)
+      Blockly.Blocks['nlsql_field'].T$_toolbox(newCat);
     
     // Output
     newCat = qryCat.find("category[name='" + T$.i18n('Output') + "']");
     if (!newCat.length) 
         newCat = $("<category name='" + T$.i18n('Output') + "'></category>").appendTo(qryCat);
-    Blockly.Blocks['nlsql_js'].T$_toolbox(newCat);
-    Blockly.Blocks['nlsql_tsv'].T$_toolbox(newCat);
-    Blockly.Blocks['nlsql_verbal_output'].T$_toolbox(newCat);
-    Blockly.Blocks['nlsql_ethercalc_output'].T$_toolbox(newCat);
+    var blk = cat.find('block[type="nlsql_js"]');
+    if (!blk.length){
+      Blockly.Blocks['nlsql_js'].T$_toolbox(newCat);
+      Blockly.Blocks['nlsql_tsv'].T$_toolbox(newCat);
+      Blockly.Blocks['nlsql_verbal_output'].T$_toolbox(newCat);
+      Blockly.Blocks['nlsql_ethercalc_output'].T$_toolbox(newCat);
+    }
   });  
 });
 
