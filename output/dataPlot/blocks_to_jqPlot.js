@@ -4,8 +4,11 @@
 T$.on("load toolbox blocks", function(ev){
     var cat = ev.toolbox.find("category[name='" + T$.i18n('Display') + "']");
     if (cat.length){
-        $('<block type="line_chart"></block>').appendTo(cat);
-        $('<block type="series_label"></block>').appendTo(cat);
+        var blk = cat.find('block[type="line_chart"]');
+        if (!blk.length){
+            $('<block type="line_chart"></block>').appendTo(cat);
+            $('<block type="series_label"></block>').appendTo(cat);
+        }
     }
 });
 
