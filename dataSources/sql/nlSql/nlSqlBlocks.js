@@ -394,6 +394,9 @@ Blockly.Blocks['nlsql_tsv'] = {
         this.setHelpUrl('');
         // Code attached to block.IOTKEY is attached to the codeBlock "generate" event
         // during a move operation. See onWorkSpaceChange
+        T$_editor.document.addBlock(this)
+          .setAttribute("requires", "TSVfromSQL");
+        /*
         this.T$ = {
             onGenerate: function (ev) {
                 // This is the output type from the block
@@ -401,6 +404,7 @@ Blockly.Blocks['nlsql_tsv'] = {
                 ev.type = "TSVfromSQL";
             }
         };
+        */
     },
   T$_toolbox: function(cat){
     var entry = '<block type="nlsql_tsv"></block>';
@@ -419,8 +423,11 @@ Blockly.Blocks['nlsql_js'] = {
         this.setColour(230);
         this.setTooltip('');
         this.setHelpUrl('');
+        T$_editor.document.addBlock(this)
+          .setAttribute("requires", "JSfromSQL");
         // Code attached to block.IOTKEY is attached to the codeBlock "generate" event
         // during a move operation. See onWorkSpaceChange
+        /*
         this.T$ = {
             onGenerate: function (ev) {
                 // This is the output type from the block
@@ -428,6 +435,7 @@ Blockly.Blocks['nlsql_js'] = {
                 ev.type = "JSfromSQL";
             }
         };
+        */
     },
   T$_toolbox: function(cat){
     var entry = '<block type="nlsql_js"></block>';
