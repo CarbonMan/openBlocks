@@ -1,11 +1,4 @@
 <index>
-  <concepts>
-    <!-- 
-      The concepts are used when a blockly page is loaded it determines what is loaded into the toolbox
-    -->
-    <concept name='NL SQL'/>
-    <concept name='Charts'/>
-  </concepts>
   <feature>
     <!-- Not associated with any concept so always present -->
     <name>code blocks</name>
