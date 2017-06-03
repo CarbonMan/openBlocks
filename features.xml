@@ -1,10 +1,13 @@
-<features>
-  <feature>
-    <name>code blocks</name>
-    <definition>codeBlocks/baseBlock.xml</definition>
-  </feature>
-  <feature>
-    <name>jqPlot interface</name>
-    <definition>output/dataPlot/blocks_to_jqPlot.xml</definition>
-  </feature>
-</features>
+<index>
+  <concept id='1' name='NL SQL'/>
+  <features>
+    <feature>
+      <name>code blocks</name>
+      <definition>codeBlocks/baseBlock.xml</definition>
+    </feature>
+    <feature>
+      <name>jqPlot interface</name>
+      <definition>output/dataPlot/blocks_to_jqPlot.xml</definition>
+    </feature>
+  </features>
+</index>
