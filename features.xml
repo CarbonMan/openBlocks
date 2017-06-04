@@ -1,18 +1,15 @@
 <index>
-  <feature>
+  <feature name="code blocks">
     <!-- Not associated with any concept so always present -->
-    <name>code blocks</name>
     <definition>codeBlocks/baseBlock.xml</definition>
   </feature>
-  <feature>
+  <feature name="NL SQL">
     <!-- There may be 1 or more associated concepts -->
     <concept name='NL SQL'/>
-    <name>NL SQL</name>
     <definition>dataSources/sql/nlSql.xml</definition>
   </feature>
-  <feature>
+  <feature name="jqPlot interface">
     <concept name='Charts'/>
-    <name>jqPlot interface</name>
     <definition>output/dataPlot/blocks_to_jqPlot.xml</definition>
   </feature>
 </index>
