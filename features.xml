@@ -6,7 +6,7 @@
   <feature name="NL SQL">
     <!-- There may be 1 or more associated concepts -->
     <concept name='NL SQL'/>
-    <definition>dataSources/sql/nlSql.xml</definition>
+    <definition>dataSources/sql/nlSql/nlSql.xml</definition>
   </feature>
   <feature name="jqPlot interface">
     <concept name='Charts'/>
