@@ -11,12 +11,14 @@ $(function () {
   T$.nlSql.blocks = new NlSqlDictionary({
         dictionary: T$.nlSql.dictionary
     });
-  T$.nlSql.blocks.buildCustomBlocks();
   
   // Build the toolbox categories and load the blocks into them.
   // The blocks have a custom function T$_toolbox to make it easier to 
   // centralize the code.
   T$.on("load toolbox categories", function(ev){
+    // Called once all openBlocks have been downloaded (see blocklyCode.js)
+    // Don't call the buildCustomBlocks until ready otherwise the blocks won't be ready.
+    T$.nlSql.blocks.buildCustomBlocks();
     var qryCat = ev.toolbox.find("category[name='" + T$.i18n('Query') + "']");
     if (!qryCat.length) 
         qryCat = $("<category name='" + T$.i18n('Query') + "'></category>").appendTo(ev.toolbox);
