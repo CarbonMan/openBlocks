@@ -2,6 +2,7 @@
 
 function NlSqlBlocks(opts) {
     var me = this;
+    eventTarget(me);
     me.primaryTable = "";
     me.relations = [];
     me.dictionary = opts.dictionary;
@@ -107,4 +108,5 @@ NlSqlBlocks.prototype.buildCustomBlocks = function (cb) {
         } else
             me.tableNames.push([t, t]);
     }
+    me.fire("add blocks", {});
 }
