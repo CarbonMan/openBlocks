@@ -7,20 +7,32 @@
   <component>
 	  <location>nlSql</location>
     <!-- The language part will default to en if a match cannot be found -->
-    <locale>nlSqlBlocks_{locale}.js</locale>
-    <file>nlSqlBlocks.js</file>
-		<file>nlSqlBlocks_{language}.js</file>
+    <locale>nlSqlDictionary_{locale}.js</locale>
+    <file>nlSqlDictionary.js</file>
+		<file>nlSqlDictionary_{language}.js</file>
     <!-- The target template -->
     <template>index.html.template</template>
   </component>
   <component>
 	<location>nlSql</location>
-    <!-- The language part will default to en if a match cannot be found -->
+    <!-- The locale part will default to en if a match cannot be found -->
     <locale>nlSql_main_{locale}.js</locale>
 		<file>nlSql_main.js</file>
 		<file>nlSql_main_{language}.js</file>
 		<!-- The target template -->
     <template>index.html.template</template>
   </component>
-    
+	<!-- 
+  The blocks must load last. Blocks require the NlSqlBlocks class to have been
+  instantiated.
+  -->
+  <component>
+	  <location>nlSql</location>
+    <!-- The locale part will default to en if a match cannot be found -->
+    <locale>nlSqlBlocks_{locale}.js</locale>
+    <file>nlSqlBlocks.js</file>
+		<file>nlSqlBlocks_{language}.js</file>
+    <!-- The target template -->
+    <template>index.html.template</template>
+  </component>
 </xml>
