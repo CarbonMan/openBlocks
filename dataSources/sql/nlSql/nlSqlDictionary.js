@@ -1,6 +1,6 @@
 //var nlSqlBlocks;
 
-function NlSqlBlocks(opts) {
+function NlSqlDictionary(opts) {
     var me = this;
     eventTarget(me);
     me.primaryTable = "";
@@ -12,7 +12,7 @@ function NlSqlBlocks(opts) {
 /**
 * Handle events from the Blockly workspace
 */
-NlSqlBlocks.prototype.onWorkSpaceChange = function(ev) {
+NlSqlDictionary.prototype.onWorkSpaceChange = function(ev) {
     var workspace = Blockly.Workspace.getById(ev.workspaceId);
     var currBlock = workspace.getBlockById(ev.blockId);
     var groupId = ev.group;
@@ -53,7 +53,7 @@ NlSqlBlocks.prototype.onWorkSpaceChange = function(ev) {
 };
 
 
-NlSqlBlocks.prototype.getAllFieldsFor = function (tableName) {
+NlSqlDictionary.prototype.getAllFieldsFor = function (tableName) {
     var fields = [];
     var dTable = this.dictionary.tables[tableName];
     for (var field in dTable.fields) {
@@ -71,7 +71,7 @@ NlSqlBlocks.prototype.getAllFieldsFor = function (tableName) {
 /**
  *  All paths lead from the primary table
  */
-NlSqlBlocks.prototype.setPrimaryTable = function (pTb) {
+NlSqlDictionary.prototype.setPrimaryTable = function (pTb) {
     var me = this;
     if (me.dictionary.tables[pTb])
         me.primaryTable = pTb;
@@ -94,7 +94,7 @@ NlSqlBlocks.prototype.setPrimaryTable = function (pTb) {
     }
 };
 
-NlSqlBlocks.prototype.buildCustomBlocks = function (cb) {
+NlSqlDictionary.prototype.buildCustomBlocks = function (cb) {
     var me = this;
     // Get the dictionary from the host
     var dict = me.dictionary;
