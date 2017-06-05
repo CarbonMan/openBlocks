@@ -2,7 +2,7 @@
 
 function NlSqlDictionary(opts) {
     var me = this;
-    eventTarget(me);
+    eventHandler(me);
     me.primaryTable = "";
     me.relations = [];
     me.dictionary = opts.dictionary;
