@@ -8,7 +8,7 @@ $(function () {
     return;
   }
   // This controls the context for blocks that need to refer to the dictionary
-  T$.nlSql.blocks = new NlSqlBlocks({
+  T$.nlSql.blocks = new NlSqlDictionary({
         dictionary: T$.nlSql.dictionary
     });
   T$.nlSql.blocks.buildCustomBlocks();
