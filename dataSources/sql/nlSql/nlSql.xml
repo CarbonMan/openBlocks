@@ -13,5 +13,14 @@
     <!-- The target template -->
     <template>index.html.template</template>
   </component>
+  <component>
+	<location>nlSql</location>
+    <!-- The language part will default to en if a match cannot be found -->
+    <locale>nlSql_master_{locale}.js</locale>
+		<file>nlSql_master.js</file>
+		<file>nlSql_master_{language}.js</file>
+		<!-- The target template -->
+    <template>index.html.template</template>
+  </component>
     
 </xml>
