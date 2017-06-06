@@ -8,7 +8,7 @@ $(function () {
     return;
   }
   // This controls the context for blocks that need to refer to the dictionary
-  T$_editor.on("resources loaded", function(){
+  T$_editor.on("resources setup", function(){
     T$.nlSql.blocks = new NlSqlDictionary({
           dictionary: T$.nlSql.dictionary
       });
