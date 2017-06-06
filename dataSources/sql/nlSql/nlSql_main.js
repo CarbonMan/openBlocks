@@ -81,7 +81,7 @@ $(function () {
     }
     */
     // Look for blocks that have hooks for attaching to a category
-    var blockIds = Object.keys(Blockly.blocks);
+    //var blockIds = Object.keys(Blockly.Blocks);
     Object.keys(Blockly.Blocks).forEach(function(id){ 
       var blk = Blockly.Blocks[id];
       if (blk.T$_toolbox){
