@@ -185,8 +185,8 @@ function addBlocks(){
             }
         };
       },
-      T$_toolbox: function(){
-          var cat = qryCat.find("category[name='" + T$.i18n('Information request') + "']");
+      T$_toolbox: function($toolbox){
+          var cat = $toolbox.find("category[name='" + T$.i18n('Information request') + "']");
           if (cat){
             var entry = '<block type="nlsql"></block>';
             $(entry).appendTo(cat);
