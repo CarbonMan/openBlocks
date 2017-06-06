@@ -8,9 +8,11 @@ $(function () {
     return;
   }
   // This controls the context for blocks that need to refer to the dictionary
-  T$.nlSql.blocks = new NlSqlDictionary({
-        dictionary: T$.nlSql.dictionary
-    });
+  T$_editor.on("resources loaded", function(){
+    T$.nlSql.blocks = new NlSqlDictionary({
+          dictionary: T$.nlSql.dictionary
+      });
+  });
   
   // Build the toolbox categories and load the blocks into them.
   // The blocks have a custom function T$_toolbox to make it easier to 
