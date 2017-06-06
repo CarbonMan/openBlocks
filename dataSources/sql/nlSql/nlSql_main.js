@@ -80,14 +80,6 @@ $(function () {
       Blockly.Blocks['nlsql_ethercalc_output'].T$_toolbox(newCat);
     }
     */
-    // Look for blocks that have hooks for attaching to a category
-    //var blockIds = Object.keys(Blockly.Blocks);
-    Object.keys(Blockly.Blocks).forEach(function(id){ 
-      var blk = Blockly.Blocks[id];
-      if (blk.T$_toolbox){
-        console.log("Adding " + id + " to toolbox"); 
-        blk.T$_toolbox(ev.toolbox);
-      }
-    });
+
   });  
 });
