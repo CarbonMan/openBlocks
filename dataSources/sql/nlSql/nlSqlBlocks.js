@@ -26,9 +26,11 @@ function addBlocks(){
         },
       T$_toolbox: function($toolbox){
           var cat = $toolbox.find("category[name='" + T$.i18n('Information request') + "']");
-        $('<block type="nlsql_table">'+
-            '<field name="tableName">name...</field>'+
-          '</block>').appendTo(cat);
+          if (cat){
+            $('<block type="nlsql_table">'+
+                '<field name="tableName">name...</field>'+
+              '</block>').appendTo(cat);
+          }
       }
     };
 
@@ -54,16 +56,16 @@ function addBlocks(){
             this.setTooltip('What columns to return');
             this.setHelpUrl('');
         },
-      T$_toolbox: function($toolbox){
-          var cat = $toolbox.find("category[name='" + T$.i18n('Columns to retrieve') + "']");
-          if (cat){
-            var entry = '<block type="nlsql_select_field">'+
-              '<field name="tableName">' + T$.i18n("table name ...") + '</field>'+
-              '<field name="fieldName">' + T$.i18n("field name ...") + '</field>'+
-            '</block>';
-            $(entry).appendTo(cat);
+          T$_toolbox: function($toolbox){
+              var cat = $toolbox.find("category[name='" + T$.i18n('Columns to retrieve') + "']");
+              if (cat){
+                var entry = '<block type="nlsql_select_field">'+
+                  '<field name="tableName">' + T$.i18n("table name ...") + '</field>'+
+                  '<field name="fieldName">' + T$.i18n("field name ...") + '</field>'+
+                '</block>';
+                $(entry).appendTo(cat);
+              }
           }
-      }
     };
 
     Blockly.Blocks['nlsql_field'] = {
@@ -115,12 +117,15 @@ function addBlocks(){
             this.setTooltip('Table column');
             this.setHelpUrl('');
         },
-      T$_toolbox: function(cat){
-        var entry = '<block type="nlsql_tableField">'+
-          '<field name="tableName">' + T$.i18n("table name ...") + '</field>'+
-          '<field name="fieldName">' + T$.i18n("field name ...") + '</field>'+
-        '</block>';
-        $(entry).appendTo(cat);
+      T$_toolbox: function($toolbox){
+          var cat = $toolbox.find("category[name='" + T$.i18n('Expressions') + "']");
+          if (cat){
+            var entry = '<block type="nlsql_tableField">'+
+              '<field name="tableName">' + T$.i18n("table name ...") + '</field>'+
+              '<field name="fieldName">' + T$.i18n("field name ...") + '</field>'+
+            '</block>';
+            $(entry).appendTo(cat);
+          }
       }
     };
 
