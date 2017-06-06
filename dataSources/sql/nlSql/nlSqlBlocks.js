@@ -24,8 +24,8 @@ function addBlocks(){
             this.setTooltip('Primary context');
             this.setHelpUrl('');
         },
-      T$_toolbox: function(){
-          var cat = qryCat.find("category[name='" + T$.i18n('Information request') + "']");
+      T$_toolbox: function($toolbox){
+          var cat = $toolbox.find("category[name='" + T$.i18n('Information request') + "']");
         $('<block type="nlsql_table">'+
             '<field name="tableName">name...</field>'+
           '</block>').appendTo(cat);
