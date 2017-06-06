@@ -4,21 +4,23 @@
   <description>Reads a dictionary to create a natural query interface</description>
 	<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
   <location>blocklyCode</location>
-  <component>
+	<!-- 
+		locale is the local language 
+		language is the programming language
+	-->
+  <component type="editor">
 	  <location>nlSql</location>
     <!-- The language part will default to en if a match cannot be found -->
     <locale>nlSqlDictionary_{locale}.js</locale>
     <file>nlSqlDictionary.js</file>
-		<file>nlSqlDictionary_{language}.js</file>
     <!-- The target template -->
     <template>index.html.template</template>
   </component>
-  <component>
-	<location>nlSql</location>
+  <component type="editor">
+		<location>nlSql</location>
     <!-- The locale part will default to en if a match cannot be found -->
     <locale>nlSql_main_{locale}.js</locale>
 		<file>nlSql_main.js</file>
-		<file>nlSql_main_{language}.js</file>
 		<!-- The target template -->
     <template>index.html.template</template>
   </component>
@@ -26,7 +28,7 @@
   The blocks must load last. Blocks require the NlSqlBlocks class to have been
   instantiated.
   -->
-  <component>
+  <component type="editor">
 	  <location>nlSql</location>
     <!-- The locale part will default to en if a match cannot be found -->
     <locale>nlSqlBlocks_{locale}.js</locale>
@@ -34,5 +36,9 @@
 		<file>nlSqlBlocks_{language}.js</file>
     <!-- The target template -->
     <template>index.html.template</template>
+  </component>
+  <component type="generator">
+		<location>nlSql</location>
+		<file>nlSqlBlocks_{language}.js</file>
   </component>
 </xml>
