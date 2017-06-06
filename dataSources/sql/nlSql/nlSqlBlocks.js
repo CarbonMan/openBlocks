@@ -1,6 +1,8 @@
 $(function(){
-    T$.nlSql.blocks.on("add blocks", function(){
-        addBlocks.apply(T$.nlSql.blocks);
+    T$_editor.on("resources loaded", function(){
+        T$.nlSql.blocks.on("add blocks", function(){
+            addBlocks.apply(T$.nlSql.blocks);
+        });
     });
 });
 
