@@ -1,8 +1,10 @@
 $(function(){
     T$_editor.on("resources loaded", function(){
-        T$.nlSql.blocks.on("add blocks", function(){
-            addBlocks.apply(T$.nlSql.blocks);
-        });
+        setTimeout(function(){
+            T$.nlSql.blocks.on("add blocks", function(){
+                addBlocks.apply(T$.nlSql.blocks);
+            });
+        }, 0);
     });
 });
 
