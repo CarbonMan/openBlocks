@@ -1,16 +1,19 @@
 <xml>
-  <type>feature</type>
-  <title>jqPlot interface</title>
-  <description>Takes a block of data and creates a plot</description>
+	<type>feature</type>
+	<title>jqPlot interface</title>
+	<description>Takes a block of data and creates a plot</description>
 	<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
-  <location>blocklyCode</location>
-  <component>
-	  <location>mixin</location>
-    <file>blocks_to_jqPlot.js</file>
-    <!-- The language part will default to en if a match cannot be found -->
-    <locale>blocks_to_jqPlot_{locale}.js</locale>
-    <!-- The target template -->
-    <template>index.html.template</template>
-  </component>
+	<location>blocklyCode</location>
+	<component type="editor">
+		<location>mixin</location>
+		<!-- The language part will default to en if a match cannot be found -->
+		<locale>blocks_to_jqPlot_{locale}.js</locale>
+		<!-- The target template -->
+		<template>index.html.template</template>
+	</component>
+	<component type="generator">
+		<location>mixin</location>
+		<file>blocks_to_jqPlot.js</file>
+	</component>
     
 </xml>
