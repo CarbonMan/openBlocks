@@ -6,6 +6,14 @@
 	<location>blocklyCode</location>
 	<component type="editor">
 		<location>mixin</location>
+		<file>blocks_to_jqPlot_main.js</file>
+		<!-- The language part will default to en if a match cannot be found -->
+		<locale>blocks_to_jqPlot_main_{locale}.js</locale>
+		<!-- The target template -->
+		<template>index.html.template</template>
+	</component>
+	<component type="editor">
+		<location>mixin</location>
 		<file>blocks_to_jqPlot.js</file>
 		<!-- The language part will default to en if a match cannot be found -->
 		<locale>blocks_to_jqPlot_{locale}.js</locale>
