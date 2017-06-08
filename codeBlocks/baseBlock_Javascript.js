@@ -3,7 +3,7 @@ Blockly.JavaScript['codeBlock'] = function (block) {
     var ev = {
         context: block.T$.context,
         outputType: "string",
-        type: "javascript",
+        type: "Javascript",
         code: code
     };
     // Allow blocks (such as nlsql_verbal_output to restructure the code)
