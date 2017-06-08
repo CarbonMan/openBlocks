@@ -1,6 +1,7 @@
 /**
 * Generate an jqPlot chart statement
 */
+/*
 T$.on("load toolbox blocks", function(ev){
     var cat = ev.toolbox.find("category[name='" + T$.i18n('Display') + "']");
     if (cat.length){
@@ -11,7 +12,7 @@ T$.on("load toolbox blocks", function(ev){
         }
     }
 });
-
+*/
 /**
 * Chart statements
 */
@@ -39,7 +40,13 @@ Blockly.Blocks['line_chart'] = {
         this.setColour(230);
         this.setTooltip('');
         this.setHelpUrl('');
-    }
+    },
+      T$_toolbox: function($toolbox){
+          var cat = $toolbox.find("category[name='" + T$.i18n('Display') + "']");
+          if (cat){
+              $('<block type="line_chart"></block>').appendTo(cat);
+          }
+      }
 };
 
 Blockly.Blocks['series_label'] = {
@@ -52,7 +59,13 @@ Blockly.Blocks['series_label'] = {
         this.setColour(230);
         this.setTooltip('');
         this.setHelpUrl('');
-    }
+    },
+      T$_toolbox: function($toolbox){
+          var cat = $toolbox.find("category[name='" + T$.i18n('Display') + "']");
+          if (cat){
+              $('<block type="series_label"></block>').appendTo(cat);
+          }
+      }
 };
 
 /**
