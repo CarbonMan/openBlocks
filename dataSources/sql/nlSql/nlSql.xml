@@ -10,30 +10,29 @@
 	-->
   <component type="editor">
 	  <location>nlSql</location>
+    <file>nlSqlDictionary.js</file>
     <!-- The language part will default to en if a match cannot be found -->
     <locale>nlSqlDictionary_{locale}.js</locale>
-    <file>nlSqlDictionary.js</file>
     <!-- The target template -->
     <template>index.html.template</template>
   </component>
   <component type="editor">
 		<location>nlSql</location>
-    <!-- The locale part will default to en if a match cannot be found -->
-    <locale>nlSql_main_{locale}.js</locale>
 		<file>nlSql_main.js</file>
+		<!-- The locale part will default to en if a match cannot be found -->
+		<locale>nlSql_main_{locale}.js</locale>
 		<!-- The target template -->
-    <template>index.html.template</template>
+		<template>index.html.template</template>
   </component>
 	<!-- 
-  The blocks must load last. Blocks require the NlSqlBlocks class to have been
-  instantiated.
-  -->
+	The blocks must load last. Blocks require the NlSqlBlocks class to have been
+	instantiated.
+	-->
   <component type="editor">
-	  <location>nlSql</location>
-    <!-- The locale part will default to en if a match cannot be found -->
+		<location>nlSql</location>
+		<file>nlSqlBlocks.js</file>
+		<!-- The locale part will default to en if a match cannot be found -->
     <locale>nlSqlBlocks_{locale}.js</locale>
-    <file>nlSqlBlocks.js</file>
-		<file>nlSqlBlocks_{language}.js</file>
     <!-- The target template -->
     <template>index.html.template</template>
   </component>
