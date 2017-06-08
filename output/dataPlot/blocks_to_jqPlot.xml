@@ -13,7 +13,7 @@
 	</component>
 	<component type="generator">
 		<location>mixin</location>
-		<file>blocks_to_jqPlot.js</file>
+		<file>blocks_to_jqPlot_{language}.js</file>
 	</component>
     
 </xml>
