@@ -189,6 +189,11 @@ function addBlocks(){
         this.T$ = {
             onGenerate: function (ev) {
                 ev.type = "chat";
+            },
+            onAttach: function(newParentId, oldParentId){
+                T$_editor.document.getBlockById(newParentId).addFeature("NL_SQL");
+                if (oldParentId)
+                    T$_editor.document.getBlockById(oldParentId).removeFeature("NL_SQL");
             }
         };
       },
