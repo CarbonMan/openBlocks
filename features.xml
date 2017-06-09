@@ -1,5 +1,5 @@
 <index>
-  <feature name="code blocks">
+  <feature name="code_blocks">
     <!-- Not associated with any concept so always present -->
     <definition>codeBlocks/baseBlock.xml</definition>
   </feature>
@@ -8,7 +8,7 @@
     <concept name='SQL'/>
     <definition>dataSources/sql/nlSql/nlSql.xml</definition>
   </feature>
-  <feature name="jqPlot interface">
+  <feature name="jqPlot">
     <concept name='Charts'/>
     <definition>output/dataPlot/blocks_to_jqPlot.xml</definition>
   </feature>
