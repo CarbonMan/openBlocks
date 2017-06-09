@@ -2,6 +2,6 @@
     <!-- 
       The concepts are used when a blockly page is loaded it determines what is loaded into the toolbox
     -->
-    <concept name='NL SQL' id='1'/>
+    <concept name='SQL' id='1'/>
     <concept name='Charts' id='2'/>
   </concepts>
