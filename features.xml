@@ -3,9 +3,9 @@
     <!-- Not associated with any concept so always present -->
     <definition>codeBlocks/baseBlock.xml</definition>
   </feature>
-  <feature name="NL SQL">
+  <feature name="NL_SQL">
     <!-- There may be 1 or more associated concepts -->
-    <concept name='NL SQL'/>
+    <concept name='SQL'/>
     <definition>dataSources/sql/nlSql/nlSql.xml</definition>
   </feature>
   <feature name="jqPlot interface">
