@@ -118,7 +118,7 @@ NlSqlDictionary.prototype.setPrimaryTable = function (pTb) {
 */
 NlSqlDictionary.prototype.setValidFields = function (table) {
     var opts = this.getAllFieldsFor(table);
-    me.fields.forEach(function(fld){
+    this.fields.forEach(function(fld){
         fld.options.push(opts);
     });
 };
