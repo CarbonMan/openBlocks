@@ -23,6 +23,12 @@ NlSqlDictionary.prototype.setQuery = function(dDfield) {
 */
 NlSqlDictionary.prototype.addPrimaryTableField = function(dDfield) {
     this.fields.push(dDfield);
+    var opts = [];
+    if (me.primaryTable)
+        opts = this.getAllFieldsFor(me.primaryTable);
+    else
+        opts = [ T$.i18n('fields') ,''];
+    dDfield.options.push( opts );
 };
 
 /**
