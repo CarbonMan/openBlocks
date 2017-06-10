@@ -72,11 +72,13 @@ function addBlocks(){
 
     Blockly.Blocks['nlsql_field'] = {
         init: function () {
+            /*
             if (!me.primaryTable)
                 return false;
             var fields = me.getAllFieldsFor(me.primaryTable);
-            var tableFieldDd = new Blockly.FieldDropdown(fields, function (e) {
-            });
+            */
+            var tableFieldDd = new Blockly.FieldDropdown([[ T$.i18n('fields') ,'']]);
+            me.addPrimaryTableField(tableFieldDd);
             this.appendDummyInput()
                 .appendField("Column")
                 .appendField(tableFieldDd, "fieldName");
@@ -100,7 +102,7 @@ function addBlocks(){
 
     Blockly.Blocks['nlsql_tableField'] = {
         init: function () {
-            var tableFieldDd = new Blockly.FieldDropdown([["field", "field"]]);
+            var tableFieldDd = new Blockly.FieldDropdown([[ T$.i18n('fields'), "field"]]);
             var tableDd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames, function (e) {
                 // Clear the field dropdown but keep the same reference to the array
                 // object
@@ -133,19 +135,11 @@ function addBlocks(){
 
     Blockly.Blocks['nlsql_query'] = {
         init: function () {
-            if (!me.primaryTable || !dict.queries)
-                return false;
-            if (!Object.keys(dict.queries).length)
-                return false;
-            var queries = [];
-            for (var q in dict.queries) {
-                var query = dict.queries[q];
-                if (query.table == me.primaryTable) {
-                    queries.push([q, q]);
-                }
-            }
+            var queryDd = new Blockly.FieldDropdown([[ T$.i18n('Query...'), ""]]);
+            me.setQuery(queryDd);
+            me.setValidQueries();
             this.appendDummyInput()
-                .appendField(new Blockly.FieldDropdown(queries), "query");
+                .appendField(queryDd, "query");
             this.setOutput(true, "nlsql_namedQuery");
             this.setColour(230);
             this.setTooltip('');
