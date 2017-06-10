@@ -266,25 +266,25 @@ function addBlocks(){
             this.setHelpUrl('');
             // Code attached to block.IOTKEY is attached to the codeBlock "generate" event
             // during a move operation. See onWorkSpaceChange
+            /*
             T$_editor.document.addBlock(this)
               .setAttribute("requires", "TSVfromSQL");
-            /*
+            */
             this.T$ = {
-                onGenerate: function (ev) {
-                    // This is the output type from the block
-                    ev.outputType = "TSV";
-                    ev.type = "TSVfromSQL";
+                onAttach: function(newParentId, oldParentId){
+                    T$_editor.document.getBlockById(newParentId).setDataType("TSV");
+                    if (oldParentId)
+                        T$_editor.document.getBlockById(oldParentId).removeDataType("TSV");
                 }
             };
-            */
         },
-      T$_toolbox: function($toolbox){
-          var cat = $toolbox.find("category[name='" + T$.i18n('Output') + "']");
-          if (cat){
-            var entry = '<block type="nlsql_tsv"></block>';
-            $(entry).appendTo(cat);
+          T$_toolbox: function($toolbox){
+              var cat = $toolbox.find("category[name='" + T$.i18n('Output') + "']");
+              if (cat){
+                var entry = '<block type="nlsql_tsv"></block>';
+                $(entry).appendTo(cat);
+              }
           }
-      }
     };
 
     /**
@@ -298,27 +298,27 @@ function addBlocks(){
             this.setColour(230);
             this.setTooltip('');
             this.setHelpUrl('');
+            /*
             T$_editor.document.addBlock(this)
               .setAttribute("requires", "JSfromSQL");
+            */
             // Code attached to block.IOTKEY is attached to the codeBlock "generate" event
             // during a move operation. See onWorkSpaceChange
-            /*
             this.T$ = {
-                onGenerate: function (ev) {
-                    // This is the output type from the block
-                    ev.outputType = "JS";
-                    ev.type = "JSfromSQL";
+                onAttach: function(newParentId, oldParentId){
+                    T$_editor.document.getBlockById(newParentId).setDataType("JS");
+                    if (oldParentId)
+                        T$_editor.document.getBlockById(oldParentId).removeDataType("JS");
                 }
             };
-            */
         },
-      T$_toolbox: function($toolbox){
-          var cat = $toolbox.find("category[name='" + T$.i18n('Output') + "']");
-          if (cat){
-            var entry = '<block type="nlsql_js"></block>';
-            $(entry).appendTo(cat);
+          T$_toolbox: function($toolbox){
+              var cat = $toolbox.find("category[name='" + T$.i18n('Output') + "']");
+              if (cat){
+                var entry = '<block type="nlsql_js"></block>';
+                $(entry).appendTo(cat);
+              }
           }
-      }
     };
 
     Blockly.Blocks['nlsql_column_as'] = {
