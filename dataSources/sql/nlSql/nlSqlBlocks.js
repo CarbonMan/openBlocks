@@ -274,7 +274,7 @@ function addBlocks(){
                 onAttach: function(newParentId, oldParentId){
                     T$_editor.document.getBlockById(newParentId).setDataType("TSV");
                     if (oldParentId)
-                        T$_editor.document.getBlockById(oldParentId).removeDataType("TSV");
+                        T$_editor.document.getBlockById(oldParentId).clearDataType();
                 }
             };
         },
@@ -308,7 +308,7 @@ function addBlocks(){
                 onAttach: function(newParentId, oldParentId){
                     T$_editor.document.getBlockById(newParentId).setDataType("JS");
                     if (oldParentId)
-                        T$_editor.document.getBlockById(oldParentId).removeDataType("JS");
+                        T$_editor.document.getBlockById(oldParentId).clearDataType();
                 }
             };
         },
