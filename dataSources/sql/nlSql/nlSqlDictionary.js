@@ -29,7 +29,8 @@ NlSqlDictionary.prototype.addPrimaryTableField = function(dDfield) {
         opts = me.getAllFieldsFor(me.primaryTable);
     else
         opts = [ T$.i18n('fields') ,''];
-    dDfield.options.push( opts );
+    var arr = dDfield.getOptions();
+    arr.push( opts );
 };
 
 /**
