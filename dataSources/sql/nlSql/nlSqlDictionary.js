@@ -7,7 +7,23 @@ function NlSqlDictionary(opts) {
     me.relations = [];
     me.dictionary = opts.dictionary;
     me.tableNames = [];
+    me.queryDd = null;
+    me.fields = []
 }
+
+/**
+* Add a dropdown field for queries
+*/
+NlSqlDictionary.prototype.setQuery = function(dDfield) {
+    this.queryDd = dDfield;
+};
+
+/**
+* Add a dropdown for the selection of fields from the primary table
+*/
+NlSqlDictionary.prototype.addPrimaryTableField = function(dDfield) {
+    this.fields.push(dDfield);
+};
 
 /**
 * Handle events from the Blockly workspace
@@ -92,6 +108,45 @@ NlSqlDictionary.prototype.setPrimaryTable = function (pTb) {
             me.relations.push(relation);
         }
     }
+    this.setValidQueries();
+    this.setValidFields(pTb);
+};
+
+/**
+* For each dropdown that does not specify the table
+* set the available fields according to the primary table
+*/
+NlSqlDictionary.prototype.setValidFields = function (table) {
+    var opts = this.getAllFieldsFor(table);
+    me.fields.forEach(function(fld){
+        fld.options.push(opts);
+    });
+};
+
+/**
+* Set the query options for the current primary table
+* called whenever the primary table changes
+*/
+NlSqlDictionary.prototype.setValidQueries = function () {
+    /*
+    if (!me.primaryTable || !dict.queries)
+        return false;
+    if (!Object.keys(dict.queries).length)
+        return false;
+    */
+    if (!this.queryDd || !this.primaryTable)
+        return;
+    var arr = this.queryDd.getOptions();
+    arr.length = 0;
+    var dict = this.dictionary;
+    var queries = [];
+    for (var q in dict.queries) {
+        var query = dict.queries[q];
+        if (query.table == this.primaryTable) {
+            queries.push([q, q]);
+        }
+    }
+    arr.push.apply(arr, queries);
 };
 
 NlSqlDictionary.prototype.buildCustomBlocks = function (cb) {
