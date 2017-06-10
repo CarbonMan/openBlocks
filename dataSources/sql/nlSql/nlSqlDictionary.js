@@ -22,10 +22,11 @@ NlSqlDictionary.prototype.setQuery = function(dDfield) {
 * Add a dropdown for the selection of fields from the primary table
 */
 NlSqlDictionary.prototype.addPrimaryTableField = function(dDfield) {
-    this.fields.push(dDfield);
+    var me = this;
+    me.fields.push(dDfield);
     var opts = [];
     if (me.primaryTable)
-        opts = this.getAllFieldsFor(me.primaryTable);
+        opts = me.getAllFieldsFor(me.primaryTable);
     else
         opts = [ T$.i18n('fields') ,''];
     dDfield.options.push( opts );
