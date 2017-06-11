@@ -36,11 +36,11 @@ Blockly.Blocks['codeBlock'] = {
       var me = this;
       me.on("required feature", function(ev){
         console.log("Set to require " + ev.feature);
-        me.addFeature(ev.feature);
+        me.B$.addFeature(ev.feature);
       });
 			me.on("output format", function(ev){
 				console.log("Output format set to " + ev.format);
-        me.setAttribute("output", ev.format);
+        me.B$.setAttribute("output", ev.format);
 			});
     },
     toolbox$: function ($toolbox) {
