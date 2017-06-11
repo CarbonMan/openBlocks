@@ -15,7 +15,7 @@ $(function () {
   });
   
   // Build the toolbox categories and load the blocks into them.
-  // The blocks have a custom function T$_toolbox to make it easier to 
+  // The blocks have a custom function toolbox$ to make it easier to 
   // centralize the code.
   T$.on("load toolbox categories", function(ev){
     // Called once all openBlocks have been downloaded (see blocklyCode.js)
