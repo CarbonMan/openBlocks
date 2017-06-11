@@ -208,12 +208,22 @@ function addBlocks() {
 			 */
 			this.on("attach", function (ev) {
 				console.log("attach");
+				this.fire("required feature", {
+					feature: "NL_SQL"
+				});
+				/*
 				var newId = ev.newParentId,
 				oldId = ev.oldParentId;
 				T$_editor.document.getBlockById(newId).addFeature("NL_SQL");
 				if (oldId)
 					T$_editor.document.getBlockById(oldId).removeFeature("NL_SQL");
+				*/
 			});
+			
+			this.on("output format", function(ev){
+				console.log("Output format set to " + ev.format);
+			});
+
 		},
 		toolbox$: function ($toolbox) {
 			var cat = $toolbox.find("category[name='" + T$.i18n('Information request') + "']");
@@ -314,11 +324,16 @@ function addBlocks() {
 			 */
 			this.on("attach", function (ev) {
 				console.log("attach");
+				this.fire("output format", {
+					format: "TSV"
+				});
+				/*
 				var newId = ev.newParentId,
 				oldId = ev.oldParentId;
 				T$_editor.document.getBlockById(newId).setDataType("TSV");
 				if (oldId)
 					T$_editor.document.getBlockById(oldId).clearDataType();
+				*/
 			});
 
 		},
