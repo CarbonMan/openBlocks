@@ -33,15 +33,28 @@ Blockly.Blocks['codeBlock'] = {
         */
     },
     oncreate$: function(){
-      var me = this;
-      me.on("required feature", function(ev){
-        console.log("Set to require " + ev.feature);
-        me.B$.addFeature(ev.feature);
-      });
-			me.on("output format", function(ev){
-				console.log("Output format set to " + ev.format);
-        me.B$.setAttribute("output", ev.format);
-			});
+	var me = this;
+	me.on("required feature", function(ev){
+        	console.log("Set to require " + ev.feature);
+        	me.B$.addFeature(ev.feature);
+	});
+	me.on("output format", function(ev){
+		console.log("Output format set to " + ev.format);
+        	me.B$.setAttribute("output", ev.format);
+	});
+	me.on("save", function(ev){
+		var state = this.workspaceXml;
+		// Move any attributes onto the block
+		Object.keys(ev.attributes).forEach(function (p) {
+			state.setAttribute(p, ev.attributes[p]);
+		});
+		// The features that must be present for this block to execute
+		ev.features.forEach(function (f) {
+			$("<feature name='" + f + "'/>").appendTo(state);
+		});
+		// The data format of the block's output.
+		state.setAttribute("dataType", ev.dataType);
+	});
     },
     toolbox$: function ($toolbox) {
       var cat = $toolbox.find("category[name='" + T$.i18n('Block') + "']");
