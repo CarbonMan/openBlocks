@@ -41,7 +41,7 @@ Blockly.Blocks['line_chart'] = {
         this.setTooltip('');
         this.setHelpUrl('');
     },
-      T$_toolbox: function($toolbox){
+      toolbox$: function($toolbox){
           var cat = $toolbox.find("category[name='" + T$.i18n('Display') + "']");
           if (cat){
               $('<block type="line_chart"></block>').appendTo(cat);
@@ -60,7 +60,7 @@ Blockly.Blocks['series_label'] = {
         this.setTooltip('');
         this.setHelpUrl('');
     },
-      T$_toolbox: function($toolbox){
+      toolbox$: function($toolbox){
           var cat = $toolbox.find("category[name='" + T$.i18n('Display') + "']");
           if (cat){
               $('<block type="series_label"></block>').appendTo(cat);
