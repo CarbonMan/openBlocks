@@ -219,11 +219,6 @@ function addBlocks() {
 					T$_editor.document.getBlockById(oldId).removeFeature("NL_SQL");
 				*/
 			});
-			
-			this.on("output format", function(ev){
-				console.log("Output format set to " + ev.format);
-			});
-
 		},
 		toolbox$: function ($toolbox) {
 			var cat = $toolbox.find("category[name='" + T$.i18n('Information request') + "']");
