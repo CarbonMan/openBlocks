@@ -5,9 +5,11 @@ T$.on("load toolbox categories", function(ev){
   var cat = ev.toolbox.find("category[name='" + T$.i18n('Block') + "']");
   if (!cat.length) 
       cat = $("<category name='" + T$.i18n('Block') + "'></category>").appendTo(ev.toolbox);
+  /*
   var blk = cat.find('block[type="codeBlock"]');
   if (!blk.length)
     $('<block type="codeBlock"></block>').appendTo(cat);
+  */
 });
 
 Blockly.Blocks['codeBlock'] = {
@@ -20,6 +22,7 @@ Blockly.Blocks['codeBlock'] = {
         this.setColour(230);
         this.setTooltip('');
         this.setHelpUrl('');
+        /*
         // Used while generating code (see nlSqlBlockGenerator.js)
         eventHandler(this);
         // Called by statements during generation
@@ -27,6 +30,19 @@ Blockly.Blocks['codeBlock'] = {
             context: {}
         };
         eventHandler(this.T$);
+        */
+    },
+    oncreate$: function(){
+      var me = this;
+      me.on("required feature", function(ev){
+        console.log("Set to require " + ev.feature);
+        me.addFeature(ev.feature);
+      });
+    },
+    toolbox$: function ($toolbox) {
+      var cat = $toolbox.find("category[name='" + T$.i18n('Block') + "']");
+      if (cat.length) 
+        $('<block type="codeBlock"></block>').appendTo(cat);
     }
 };
 
