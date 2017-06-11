@@ -36,6 +36,7 @@ NlSqlDictionary.prototype.addPrimaryTableField = function(dDfield) {
 /**
 * Handle events from the Blockly workspace
 */
+/*
 NlSqlDictionary.prototype.onWorkSpaceChange = function(ev) {
     var workspace = Blockly.Workspace.getById(ev.workspaceId);
     var currBlock = workspace.getBlockById(ev.blockId);
@@ -44,16 +45,6 @@ NlSqlDictionary.prototype.onWorkSpaceChange = function(ev) {
     console.log(ev.type);
     switch (ev.type) {
         case "create":
-            /*
-            switch (currBlock.type) {
-                case "db_select_field":
-                    var inp = currBlock.inputList[1];
-                    var fields = inp.fieldRow;
-                    inp.removeField(fields[1]);
-                    inp.removeField(fields[0]);
-                    break;
-            }
-            */
             break;
         case "move":
             // currBlock will be null if the block is moved to the garbage bin
@@ -75,7 +66,7 @@ NlSqlDictionary.prototype.onWorkSpaceChange = function(ev) {
             break;
     }
 };
-
+*/
 
 NlSqlDictionary.prototype.getAllFieldsFor = function (tableName) {
     var fields = [];
