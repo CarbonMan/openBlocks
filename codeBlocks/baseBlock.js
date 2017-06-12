@@ -14,7 +14,7 @@ T$.on("load toolbox categories", function(ev){
 
 Blockly.Blocks['task'] = {
     init: function () {
-        this.appendStatementInput("contained_code")
+        this.appendStatementInput("script")
             .setCheck(['statement', 'display'])
             .appendField(T$.i18n("Task"));
         this.setPreviousStatement(true, "task");
