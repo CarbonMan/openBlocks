@@ -1,6 +1,6 @@
 <xml>
   <type>feature</type>
-  <title>Base block for asynchronous coding</title>
+  <title>Base task for asynchronous coding</title>
   <description>Sets a toolbox category that blocks can attach to</description>
 	<!-- 
 		This is the default target for any components within this feature. Commponents are loaded relative to this.
