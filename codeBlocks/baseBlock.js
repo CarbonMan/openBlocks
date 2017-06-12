@@ -2,9 +2,9 @@
 * Requires eventTarget.js
 */
 T$.on("load toolbox categories", function(ev){
-  var cat = ev.toolbox.find("category[name='" + T$.i18n('Block') + "']");
+  var cat = ev.toolbox.find("category[name='" + T$.i18n('Task') + "']");
   if (!cat.length) 
-      cat = $("<category name='" + T$.i18n('Block') + "'></category>").appendTo(ev.toolbox);
+      cat = $("<category name='" + T$.i18n('Task') + "'></category>").appendTo(ev.toolbox);
   /*
   var blk = cat.find('block[type="codeBlock"]');
   if (!blk.length)
@@ -12,13 +12,13 @@ T$.on("load toolbox categories", function(ev){
   */
 });
 
-Blockly.Blocks['codeBlock'] = {
+Blockly.Blocks['task'] = {
     init: function () {
         this.appendStatementInput("contained_code")
             .setCheck(['statement', 'display'])
-            .appendField(T$.i18n("Block"));
-        this.setPreviousStatement(true, "block");
-        this.setNextStatement(true, "block");
+            .appendField(T$.i18n("Task"));
+        this.setPreviousStatement(true, "task");
+        this.setNextStatement(true, "task");
         this.setColour(230);
         this.setTooltip('');
         this.setHelpUrl('');
@@ -35,7 +35,7 @@ Blockly.Blocks['codeBlock'] = {
     toolbox$: function ($toolbox) {
       var cat = $toolbox.find("category[name='" + T$.i18n('Block') + "']");
       if (cat.length) 
-        $('<block type="codeBlock"></block>').appendTo(cat);
+        $('<block type="task"></block>').appendTo(cat);
     }
 };
 
