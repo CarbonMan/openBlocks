@@ -33,7 +33,7 @@ Blockly.Blocks['task'] = {
         */
     },
     toolbox$: function ($toolbox) {
-      var cat = $toolbox.find("category[name='" + T$.i18n('Block') + "']");
+      var cat = $toolbox.find("category[name='" + T$.i18n('Task') + "']");
       if (cat.length) 
         $('<block type="task"></block>').appendTo(cat);
     }
