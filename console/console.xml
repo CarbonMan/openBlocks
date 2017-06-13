@@ -1,0 +1,24 @@
+<xml>
+  <type>feature</type>
+  <title>Console output</title>
+  <description>A common block for debug output</description>
+	<!-- 
+		This is the default target for any components within this feature. Commponents are loaded relative to this.
+	-->
+  <location>blocklyCode</location>
+  
+  <component type="editor">
+	  <location>mixin</location>
+	  <!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
+	  <file>console.js</file>
+	  <!-- The language part will default to en if a match cannot be found -->
+	  <locale>console_{locale}.js</locale>
+	  <!-- The target template -->
+	  <template>index.html.template</template>
+  </component>
+  <component type="generator">
+	  <location>mixin</location>
+	  <file>console_{language}.js</file>
+  </component>
+    
+</xml>
