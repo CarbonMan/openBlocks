@@ -6,7 +6,9 @@
 		This is the default target for any components within this feature. Commponents are loaded relative to this.
 	-->
   <location>blocklyCode</location>
-  
+	<component type="definition">
+	  <file>console_define.js</file>
+  </component>  
   <component type="editor">
 	  <location>mixin</location>
 	  <!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
