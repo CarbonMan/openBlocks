@@ -7,6 +7,9 @@
 	-->
   <location>blocklyCode</location>
   
+  <component type="define">
+	<file>baseBlock_define.js</file>
+  </component>
   <component type="editor">
 	<location>mixin</location>
 	<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
