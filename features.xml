@@ -1,5 +1,5 @@
 <index>
-  <feature name="code_blocks">
+  <feature name="tasks">
     <!-- Not associated with any concept so always present -->
     <definition>codeBlocks/baseBlock.xml</definition>
   </feature>
