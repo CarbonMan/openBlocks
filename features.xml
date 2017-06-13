@@ -12,4 +12,7 @@
     <concept name='Charts'/>
     <definition>output/dataPlot/blocks_to_jqPlot.xml</definition>
   </feature>
+  <feature name="console">
+    <definition>console/console.xml</definition>
+  </feature>
 </index>
