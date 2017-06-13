@@ -4,15 +4,13 @@ $(function () {
   // centralize the code.
   T$.on("load toolbox categories", function(ev){
     // Called once all openBlocks have been downloaded (see blocklyCode.js)
-    // Don't call the buildCustomBlocks until ready otherwise the blocks won't be ready.
-    T$.nlSql.blocks.buildCustomBlocks();
     var dbgCat = ev.toolbox.find("category[name='" + T$.i18n('Debug') + "']");
     if (!dbgCat.length) 
         dbgCat = $("<category name='" + T$.i18n('Debug') + "'></category>").appendTo(ev.toolbox);
         // Console logging
     var newCat = dbgCat.find("category[name='" + T$.i18n('Console') + "']");
     if (!newCat.length) 
-        newCat = $("<category name='" + T$.i18n('Console') + "'></category>").appendTo(qryCat);
+        newCat = $("<category name='" + T$.i18n('Console') + "'></category>").appendTo(dbgCat);
 
   });  
 });
@@ -22,10 +20,10 @@ Blockly.Blocks['console'] = {
     this.appendDummyInput()
         .appendField("Display")
         .appendField(new Blockly.FieldDropdown([
-	    [ T$.L10n("verbose"),"verbose"], 
-	    [ T$.L10n("info"),"info"], 
-	    [ T$.L10n("warn"),"warning"], 
-	    [ T$.L10n("error"),"error"]]), "type");
+	    [ T$.i18n("verbose"),"verbose"], 
+	    [ T$.i18n("info"),"info"], 
+	    [ T$.i18n("warn"),"warning"], 
+	    [ T$.i18n("error"),"error"]]), "type");
     this.appendValueInput("NAME")
         .setCheck(null);
     this.setInputsInline(true);
@@ -36,10 +34,9 @@ Blockly.Blocks['console'] = {
     this.setHelpUrl('');
   },
 	toolbox$: function ($toolbox) {
-		var cat = $toolbox.find("category[name='" + T$.i18n('Debug') + "']");
+		var cat = $toolbox.find("category[name='" + T$.i18n('Console') + "']");
 		if (cat) {
 			$('<block type="console">' +
-				'<field name="tableName">name...</field>' +
 				'</block>').appendTo(cat);
 		}
 	}
