@@ -21,7 +21,11 @@ Blockly.Blocks['console'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Display")
-        .appendField(new Blockly.FieldDropdown([["verbose","verbose"], ["info","info"], ["warn","warning"], ["error","error"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([
+	    [ T$.L10n("verbose"),"verbose"], 
+	    [ T$.L10n("info"),"info"], 
+	    [ T$.L10n("warn"),"warning"], 
+	    [ T$.L10n("error"),"error"]]), "type");
     this.appendValueInput("NAME")
         .setCheck(null);
     this.setInputsInline(true);
@@ -31,12 +35,12 @@ Blockly.Blocks['console'] = {
     this.setTooltip('');
     this.setHelpUrl('');
   },
-		toolbox$: function ($toolbox) {
-			var cat = $toolbox.find("category[name='" + T$.i18n('Debug') + "']");
-			if (cat) {
-				$('<block type="console">' +
-					'<field name="tableName">name...</field>' +
-					'</block>').appendTo(cat);
-			}
+	toolbox$: function ($toolbox) {
+		var cat = $toolbox.find("category[name='" + T$.i18n('Debug') + "']");
+		if (cat) {
+			$('<block type="console">' +
+				'<field name="tableName">name...</field>' +
+				'</block>').appendTo(cat);
 		}
+	}
 };
