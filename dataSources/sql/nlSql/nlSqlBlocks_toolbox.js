@@ -128,7 +128,7 @@ $.extend(Blockly.Blocks['nlsql_ethercalc_output'], {
 });
 
 $.extend(Blockly.Blocks['nlsql_verbal_output'], {
-	toolbox$ = function ($toolbox) {
+	toolbox$: function ($toolbox) {
 		var cat = $toolbox.find("category[name='" + T$.i18n('Output') + "']");
 		if (cat) {
 			var entry = '<block type="nlsql_verbal_output"></block>';
@@ -145,7 +145,7 @@ $.extend(Blockly.Blocks['nlsql_verbal_output'], {
 			ev.code = "tell me " + ev.code.trim();
 		});
 	}
-};
+});
 
 /**
  * SQL to Tab Separated Values
