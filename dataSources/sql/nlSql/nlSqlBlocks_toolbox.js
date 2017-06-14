@@ -75,24 +75,29 @@ $.extend(Blockly.Blocks['nlsql'], {
 		this.on("generate", function (ev) {
 			ev.type = "chat";
 		});
+		/*
 		me.on("required feature", function(ev){
 			console.log("Set to require " + ev.feature);
 			me.B$.addFeature(ev.feature);
 		});
+		*/
 		me.on("output format", function(ev){
 			console.log("Output format set to " + ev.format);
 			me.B$.setAttribute("output", ev.format);
 		});
 		me.on("save", function(ev){
-			var state = this.workspaceXml;
+			var state = ev.xml;
+			// var state = this.workspaceXml;
 			// Move any attributes onto the block
 			Object.keys(ev.attributes).forEach(function (p) {
 				state.setAttribute(p, ev.attributes[p]);
 			});
+			/*
 			// The features that must be present for this block to execute
 			ev.features.forEach(function (f) {
 				$("<feature name='" + f + "'/>").appendTo(state);
 			});
+			*/
 			// The data format of the block's output.
 			state.setAttribute("dataType", ev.dataType);
 		});
