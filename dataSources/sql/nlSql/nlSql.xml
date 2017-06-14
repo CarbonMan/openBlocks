@@ -8,7 +8,7 @@
 		locale is the local language 
 		language is the programming language
 	-->
-  <component type="editor">
+  <component type="edit">
 	  <location>nlSql</location>
     <file>nlSqlDictionary.js</file>
     <!-- The language part will default to en if a match cannot be found -->
@@ -16,7 +16,7 @@
     <!-- The target template -->
     <template>index.html.template</template>
   </component>
-  <component type="editor">
+  <component type="edit">
 		<location>nlSql</location>
 		<file>nlSql_main.js</file>
 		<!-- The locale part will default to en if a match cannot be found -->
@@ -28,15 +28,17 @@
 	The blocks must load last. Blocks require the NlSqlBlocks class to have been
 	instantiated.
 	-->
-  <component type="editor">
-		<location>nlSql</location>
-		<file>nlSqlBlocks.js</file>
+  <component type="define">
+		<file>nlSqlBlocks_define.js</file>
 		<!-- The locale part will default to en if a match cannot be found -->
     <locale>nlSqlBlocks_{locale}.js</locale>
-    <!-- The target template -->
-    <template>index.html.template</template>
   </component>
-  <component type="generator">
+  <component type="edit">
+		<file>nlSqlBlocks_toolbox.js</file>
+		<!-- The locale part will default to en if a match cannot be found -->
+    <locale>nlSqlBlocks_{locale}.js</locale>
+  </component>
+  <component type="generate">
 		<location>nlSql</location>
 		<file>nlSqlBlocks_{language}.js</file>
   </component>
