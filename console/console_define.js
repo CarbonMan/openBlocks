@@ -3,7 +3,6 @@ Blockly.Blocks['console'] = {
     this.appendDummyInput()
         .appendField("Display")
         .appendField(new Blockly.FieldDropdown([
-	    [ T$.i18n("verbose"),"verbose"], 
 	    [ T$.i18n("info"),"info"], 
 	    [ T$.i18n("warn"),"warning"], 
 	    [ T$.i18n("error"),"error"]]), "type");
