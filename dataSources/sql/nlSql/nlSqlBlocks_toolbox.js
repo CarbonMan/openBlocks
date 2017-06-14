@@ -157,6 +157,25 @@ $.extend(Blockly.Blocks['nlsql_tsv'], {
 			var entry = '<block type="nlsql_tsv"></block>';
 			$(entry).appendTo(cat);
 		}
+	},
+	oncreate$: function (ev) {
+		/**
+		 *  Attaching to another block
+		 */
+		this.on("attach", function (ev) {
+			console.log("attach");
+			this.fire("output format", {
+				format: "TSV"
+			});
+			/*
+			var newId = ev.newParentId,
+			oldId = ev.oldParentId;
+			T$_editor.document.getBlockById(newId).setDataType("TSV");
+			if (oldId)
+				T$_editor.document.getBlockById(oldId).clearDataType();
+			*/
+		});
+
 	}
 });
 
@@ -164,12 +183,26 @@ $.extend(Blockly.Blocks['nlsql_tsv'], {
  * SQL to JSON
  */
 $.extend(Blockly.Blocks['nlsql_js'], {
-	toolbox$ = function ($toolbox) {
+	toolbox$: function ($toolbox) {
 		var cat = $toolbox.find("category[name='" + T$.i18n('Output') + "']");
 		if (cat) {
 			var entry = '<block type="nlsql_js"></block>';
 			$(entry).appendTo(cat);
 		}
+	},
+	oncreate$: function (ev) {
+		/**
+		 *  Attaching to another block
+		 */
+		this.on("attach", function (ev) {
+			console.log("attach");
+			var newId = ev.newParentId,
+			oldId = ev.oldParentId;
+			T$_editor.document.getBlockById(newId).setDataType("JS");
+			if (oldId)
+				T$_editor.document.getBlockById(oldId).clearDataType();
+		});
+
 	}
 });
 
