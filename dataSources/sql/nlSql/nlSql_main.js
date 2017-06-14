@@ -12,8 +12,19 @@ $(function () {
     T$.nlSql.blocks = new NlSqlDictionary({
           dictionary: T$.nlSql.dictionary
       });
+    /*
+		T$.nlSql.blocks.on("add blocks", function () {
+			addBlocks.apply(T$.nlSql.blocks);
+		});
+    */
   });
-  
+  /*
+	T$_editor.on("resources ready", function () {
+		T$.nlSql.blocks.on("add blocks", function () {
+			addBlocks.apply(T$.nlSql.blocks);
+		});
+	});
+  */
   // Build the toolbox categories and load the blocks into them.
   // The blocks have a custom function toolbox$ to make it easier to 
   // centralize the code.
