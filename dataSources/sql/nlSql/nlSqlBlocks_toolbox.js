@@ -35,7 +35,7 @@ $.extend(Blockly.Blocks['nlsql_field'],{
 });
 
 $.extend(Blockly.Blocks['nlsql_tableField'], {
-	toolbox$ = function ($toolbox) {
+	toolbox$: function ($toolbox) {
 		var cat = $toolbox.find("category[name='" + T$.i18n('Expressions') + "']");
 		if (cat) {
 			var entry = '<block type="nlsql_tableField">' +
@@ -151,7 +151,7 @@ $.extend(Blockly.Blocks['nlsql_verbal_output'], {
  * SQL to Tab Separated Values
  */
 $.extend(Blockly.Blocks['nlsql_tsv'], {
-	 toolbox$ = function ($toolbox) {
+	 toolbox$: function ($toolbox) {
 		var cat = $toolbox.find("category[name='" + T$.i18n('Output') + "']");
 		if (cat) {
 			var entry = '<block type="nlsql_tsv"></block>';
@@ -207,7 +207,7 @@ $.extend(Blockly.Blocks['nlsql_js'], {
 });
 
 $.extend(Blockly.Blocks['nlsql_column_as'], {
-	toolbox$ = function ($toolbox) {
+	toolbox$: function ($toolbox) {
 		var cat = $toolbox.find("category[name='" + T$.i18n('Columns to retrieve') + "']");
 		if (cat) {
 			var entry = '<block type="nlsql_column_as">' +
@@ -219,7 +219,7 @@ $.extend(Blockly.Blocks['nlsql_column_as'], {
 });
 
 $.extend(Blockly.Blocks['nlsql_select_field_as'], {
-	toolbox$ = function ($toolbox) {
+	toolbox$: function ($toolbox) {
 		var cat = $toolbox.find("category[name='" + T$.i18n('Columns to retrieve') + "']");
 		if (cat) {
 			var entry = '<block type="nlsql_select_field_as">' +
