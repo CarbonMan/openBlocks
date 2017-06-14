@@ -1,5 +1,5 @@
 Blockly.JavaScript['task'] = function (block) {
-    var code = Blockly.JavaScript.statementToCode(block, 'contained_code');
+    var code = Blockly.JavaScript.statementToCode(block, 'script');
     var ev = {
         context: block.T$.context,
         outputType: "string",
