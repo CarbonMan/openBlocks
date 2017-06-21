@@ -4,7 +4,10 @@
 	<description>Takes a block of data and creates a plot</description>
 	<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
 	<location>blocklyCode</location>
-	<component type="editor">
+	<component type="define">
+		<file>blocks_to_jqPlot_define.js</file>
+	</component>
+	<component type="edit">
 		<location>mixin</location>
 		<file>blocks_to_jqPlot_main.js</file>
 		<!-- The language part will default to en if a match cannot be found -->
@@ -12,7 +15,7 @@
 		<!-- The target template -->
 		<template>index.html.template</template>
 	</component>
-	<component type="editor">
+	<component type="edit">
 		<location>mixin</location>
 		<file>blocks_to_jqPlot.js</file>
 		<!-- The language part will default to en if a match cannot be found -->
@@ -20,7 +23,7 @@
 		<!-- The target template -->
 		<template>index.html.template</template>
 	</component>
-	<component type="generator">
+	<component type="generate">
 		<location>mixin</location>
 		<file>blocks_to_jqPlot_{language}.js</file>
 	</component>
