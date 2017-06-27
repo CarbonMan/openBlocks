@@ -19,6 +19,6 @@ Blockly.Blocks['line_chart'].toolbox$ = function($toolbox){
 
 Blockly.Blocks['series_label'].toolbox$ = function($toolbox){
      var cat = $toolbox.find("category[name='" + T$.i18n('Display') + "']");
-     if (cat){
+     if (cat)
          $('<block type="series_label"></block>').appendTo(cat);
 };
