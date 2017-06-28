@@ -36,7 +36,7 @@ Blockly.Blocks['nlsql_select_field'] = {
 				arr.length = 0;
 				arr.push.apply(arr, T$.nlSql.blocks.getAllFieldsFor(e));
 			});
-		else
+		}else
 			tableDd = new Blockly.FieldDropdown([["table", "table"]]);
 		this.appendDummyInput()
 		.appendField("Column");
