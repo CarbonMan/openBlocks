@@ -4,12 +4,18 @@
  */
 Blockly.Blocks['nlsql_table'] = {
 	init: function () {
-		this.appendDummyInput()
-		.appendField("Table")
-		.appendField(new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames,
+		var dd;
+		if (T$.nlSql.blocks){
+			// Running in the designer?
+			dd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames,
 				function (e) {
 					T$.nlSql.blocks.setPrimaryTable(e);
-			}), "tableName");
+				});
+		}else
+			dd = new Blockly.FieldDropdown([["table", "table"]]);
+		this.appendDummyInput()
+		.appendField("Table")
+		.appendField(dd, "tableName");
 		this.setInputsInline(true);
 		this.setOutput(true, "nlsql_tableAlias");
 		this.setColour(135);
@@ -21,13 +27,17 @@ Blockly.Blocks['nlsql_table'] = {
 Blockly.Blocks['nlsql_select_field'] = {
 	init: function () {
 		var tableFieldDd = new Blockly.FieldDropdown([["field", "field"]]);
-		var tableDd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames, function (e) {
+		var tableDd;
+		if (T$.nlSql.blocks){
+			tableDd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames, function (e) {
 				// Clear the field dropdown but keep the same reference to the array
 				// object
 				var arr = tableFieldDd.getOptions();
 				arr.length = 0;
 				arr.push.apply(arr, T$.nlSql.blocks.getAllFieldsFor(e));
 			});
+		else
+			tableDd = new Blockly.FieldDropdown([["table", "table"]]);
 		this.appendDummyInput()
 		.appendField("Column");
 		this.appendDummyInput()
@@ -45,7 +55,8 @@ Blockly.Blocks['nlsql_select_field'] = {
 Blockly.Blocks['nlsql_field'] = {
 	init: function () {
 		var tableFieldDd = new Blockly.FieldDropdown([[T$.i18n('fields'), '']]);
-		T$.nlSql.blocks.addPrimaryTableField(tableFieldDd);
+		if (T$.nlSql.blocks){
+			T$.nlSql.blocks.addPrimaryTableField(tableFieldDd);
 		this.appendDummyInput()
 		.appendField("Column")
 		.appendField(tableFieldDd, "fieldName");
@@ -61,13 +72,17 @@ Blockly.Blocks['nlsql_field'] = {
 Blockly.Blocks['nlsql_tableField'] = {
 	init: function () {
 		var tableFieldDd = new Blockly.FieldDropdown([[T$.i18n('fields'), "field"]]);
-		var tableDd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames, function (e) {
+		var tableDd;
+		if (T$.nlSql.blocks){
+			tableDd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames, function (e) {
 				// Clear the field dropdown but keep the same reference to the array
 				// object
 				var arr = tableFieldDd.getOptions();
 				arr.length = 0;
 				arr.push.apply(arr, T$.nlSql.blocks.getAllFieldsFor(e));
 			});
+		}else
+			tableDd = new Blockly.FieldDropdown([["table", "table"]]);
 		this.appendDummyInput()
 		.appendField("Column")
 		.appendField(tableDd, "tableName")
