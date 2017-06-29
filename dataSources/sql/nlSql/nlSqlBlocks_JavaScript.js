@@ -27,7 +27,7 @@ Blockly.JavaScript['nlsql'] = function (block) {
         code += ' where ' + statements_where;
     }
     console.log(code);
-    return code;
+    return 'return IOTKEY.bot.processMessage("' + code.replace('"', '\\"') + '");";
 };
 
 Blockly.JavaScript['nlsql_table'] = function (block) {
