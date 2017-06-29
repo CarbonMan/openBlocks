@@ -55,7 +55,7 @@ Blockly.Blocks['nlsql_select_field'] = {
 Blockly.Blocks['nlsql_field'] = {
 	init: function () {
 		var tableFieldDd = new Blockly.FieldDropdown([[T$.i18n('fields'), '']]);
-		if (T$.nlSql.blocks){
+		if (T$.nlSql.blocks)
 			T$.nlSql.blocks.addPrimaryTableField(tableFieldDd);
 		this.appendDummyInput()
 		.appendField("Column")
