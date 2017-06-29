@@ -126,8 +126,9 @@ Blockly.Blocks['nlsql'] = {
 		this.appendValueInput("whereClause")
 		.setCheck("Boolean")
 		.appendField(T$.i18n("Where"));
-		this.setPreviousStatement(true, "statement");
-		this.setNextStatement(true, ["statement", "nlSqlOutput"]);
+		this.setOutput(true, null);
+		//this.setPreviousStatement(true, "statement");
+		//this.setNextStatement(true, ["statement", "nlSqlOutput"]);
 		this.setColour(230);
 		this.setTooltip('');
 		this.setHelpUrl('');
