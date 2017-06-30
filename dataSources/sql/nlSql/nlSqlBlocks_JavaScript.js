@@ -1,5 +1,5 @@
 Blockly.JavaScript['nlsql'] = function (block) {
-    debugger;
+    //debugger;
     var context = Blockly.JavaScript.valueToCode(block, 'context', Blockly.JavaScript.ORDER_ATOMIC);
     console.log(context);
     // Columns to be returned
@@ -27,8 +27,9 @@ Blockly.JavaScript['nlsql'] = function (block) {
     if (statements_where) {
         code += ' where ' + statements_where;
     }
-    console.log(code);
-    return [code, Blockly.JavaScript.ORDER_ATOMIC];
+    var sqlString = '"' + code.replace(/"/g, '\\"') + '"';
+    //console.log(sqlString);
+    return [sqlString, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['nlsql_table'] = function (block) {
