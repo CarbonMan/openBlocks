@@ -189,8 +189,12 @@ Blockly.Blocks['nlsql_verbal_output'] = {
 Blockly.Blocks['nlsql_tsv'] = {
 	init: function () {
 		this.appendDummyInput()
-		.appendField("TSV");
-		this.setPreviousStatement(true, "nlSqlOutput");
+		        .appendField("Execute");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldVariable("item"), "inputVariable");
+		this.appendDummyInput()
+			.appendField("output as TSV");
+		//this.setPreviousStatement(true, "nlSqlOutput");
 		this.setColour(230);
 		this.setTooltip('');
 		this.setHelpUrl('');
