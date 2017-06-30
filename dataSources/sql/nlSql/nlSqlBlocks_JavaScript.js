@@ -28,7 +28,7 @@ Blockly.JavaScript['nlsql'] = function (block) {
         code += ' where ' + statements_where;
     }
     console.log(code);
-    return code;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['nlsql_table'] = function (block) {
