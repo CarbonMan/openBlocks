@@ -1,4 +1,5 @@
 Blockly.JavaScript['nlsql'] = function (block) {
+    debugger;
     var context = Blockly.JavaScript.valueToCode(block, 'context', Blockly.JavaScript.ORDER_ATOMIC);
     console.log(context);
     // Columns to be returned
