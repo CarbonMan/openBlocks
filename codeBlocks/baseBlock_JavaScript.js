@@ -19,3 +19,18 @@ Blockly.JavaScript['task'] = function (block) {
         "</task>";
     */
 };
+
+/**
+* The JS variable assignment is overriden so that any variables created are
+* stored within the context and passed between platforms. It is the only
+* way (for today) to get a coherent state across the different devices as a
+* program executes.
+*/
+Blockly.JavaScript['variables_set'] = function(block) {
+  // Variable setter.
+  var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
+      Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+  var varName = Blockly.JavaScript.variableDB_.getName(
+      block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  return 'me.context.vars["' + varName + '"]=' + varName + ' = ' + argument0 + ';\n';
+};
