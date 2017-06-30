@@ -3,6 +3,9 @@
 */
 Blockly.Blocks['line_chart'] = {
     init: function () {
+        this.appendValueInput("dataSource")
+            .setCheck(null)
+            .appendField( T$.i18n("Data input") );
         this.appendDummyInput()
             .appendField(T$.i18n("Line chart"));
         this.appendDummyInput()
