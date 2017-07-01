@@ -9,10 +9,10 @@ Blockly.JavaScript['line_chart'] = function (block) {
     // Run the chart against the data series
     // The code is run in the CodeBlockTree context
     var code = 'T$.codeBlocks.plot({' +
-        'context: me.context,' +
-        'uid: me.uid,' +
-        'threadId: me.threadId,' +
-        'data: vars["' + dataSource + '"],' + 
+        'context: _.context,' +
+        'uid: _.uid,' +
+        'threadId: _.threadId,' +
+        'data: _.vars["' + dataSource + '"],' + 
         'firstColumnXaxisTicks:' + (firstcolumnxaxisticks ? "true" : "false") +
         '});\n';
     return code;
