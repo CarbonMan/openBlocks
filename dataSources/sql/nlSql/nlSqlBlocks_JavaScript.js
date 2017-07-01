@@ -109,13 +109,13 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
         Blockly.JavaScript.variableDB_.getName(block.getFieldValue('inputVariable'), Blockly.Variables.NAME_TYPE);
     var outputVariable = 
         Blockly.JavaScript.variableDB_.getName(block.getFieldValue('outputVariable'), Blockly.Variables.NAME_TYPE);
-    // TSVfromSQL will send the input nlsql statement through the chat system and run it.
+    // sql2Array will send the input nlsql statement through the chat system and run it.
     // it returns a promise that resolves to the query output.
     var code = "run.sql2Array({\n" +
-            "message: " + inputVariable + "}\n" +
+            "message: vars['" + inputVariable + "']}\n" +
         ")\n"+
         ".then(function (value) {\n" + 
-            outputVariable + " = value;\n" + 
+            "vars['" + outputVariable + "'] = value;\n" + 
         "})\n" + 
         ".catch(function(e){\n" +
             "throw e;\n" +
