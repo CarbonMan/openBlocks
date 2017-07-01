@@ -226,26 +226,19 @@ Blockly.Blocks['nlsql_tsv'] = {
 Blockly.Blocks['nlsql_js'] = {
 	init: function () {
 		this.appendDummyInput()
-		.appendField("JS");
-		this.setPreviousStatement(true, "nlSqlOutput");
+		        .appendField("Execute");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldVariable("item"), "inputVariable");
+		this.appendDummyInput()
+			.appendField("output rows into");
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldVariable("item"), "outputVariable");
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
 		this.setColour(230);
 		this.setTooltip('');
 		this.setHelpUrl('');
-		/*
-		T$_editor.document.addBlock(this)
-		.setAttribute("requires", "JSfromSQL");
-		 */
-		// Code attached to block.IOTKEY is attached to the codeBlock "generate" event
-		// during a move operation. See onWorkSpaceChange
-		/*
-		this.T$ = {
-		onAttach: function(newParentId, oldParentId){
-		T$_editor.document.getBlockById(newParentId).setDataType("JS");
-		if (oldParentId)
-		T$_editor.document.getBlockById(oldParentId).clearDataType();
-		}
-		};
-		 */
 	}
 };
 
