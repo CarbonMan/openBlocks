@@ -86,7 +86,7 @@ Blockly.JavaScript['nlsql_tsv'] = function (block) {
     var inputvariable = 
         Blockly.JavaScript.variableDB_.getName(block.getFieldValue('inputVariable'), Blockly.Variables.NAME_TYPE);
     var outputvariable = 
-        Blockly.JavaScript.variableDB_.getName(block.getFieldValue('inputVariable'), Blockly.Variables.NAME_TYPE);
+        Blockly.JavaScript.variableDB_.getName(block.getFieldValue('outputVariable'), Blockly.Variables.NAME_TYPE);
     // TSVfromSQL will send the input nlsql statement through the chat system and run it.
     // it returns a promise that resolves to the query output.
     var code = "this.TSVfromSQL({\n" +
@@ -105,10 +105,22 @@ Blockly.JavaScript['nlsql_tsv'] = function (block) {
 * JS Output format
 */
 Blockly.JavaScript['nlsql_js'] = function (block) {
-    // Code is handled on an event because it restructures the statement to be
-    // "Tell me ...."
-    // see the block def.
-    return "";
+    var inputvariable = 
+        Blockly.JavaScript.variableDB_.getName(block.getFieldValue('inputVariable'), Blockly.Variables.NAME_TYPE);
+    var outputvariable = 
+        Blockly.JavaScript.variableDB_.getName(block.getFieldValue('outputVariable'), Blockly.Variables.NAME_TYPE);
+    // TSVfromSQL will send the input nlsql statement through the chat system and run it.
+    // it returns a promise that resolves to the query output.
+    var code = "this.sql2Array({\n" +
+            "message: " + inputVariable + "}\n" +
+        ")\n"+
+        ".then(function (value) {\n" + 
+            outputvariable + " = value;\n" + 
+        "})\n" + 
+        ".catch(function(e){\n" +
+            "throw e;\n" +
+        "});\n";
+    return code;
 };
 
 
