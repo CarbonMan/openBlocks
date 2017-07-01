@@ -31,7 +31,7 @@ Blockly.JavaScript['variables_get'] = function(block) {
   // Variable getter.
   var varName = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'),
       Blockly.Variables.NAME_TYPE);
-  var code = "vars['" + varName + "']";
+  var code = "_.vars['" + varName + "']";
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -43,5 +43,5 @@ Blockly.JavaScript['variables_set'] = function(block) {
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
   // Must set both the global and local copies of the variable. The "getter" above is not consistently invoked.
   // See nlsql_js for an example.
-  return 'vars["' + varName + '"]=' + varName + '=' + argument0 + ';\n';
+  return '_.vars["' + varName + '"]=' + varName + '=' + argument0 + ';\n';
 };
