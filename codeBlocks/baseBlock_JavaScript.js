@@ -29,10 +29,9 @@ Blockly.JavaScript['task'] = function (block) {
 */
 Blockly.JavaScript['variables_set'] = function(block) {
   // Variable setter.
-    debugger;
   var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
       Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
   var varName = Blockly.JavaScript.variableDB_.getName(
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-  return 'this["' + varName + '"]=' + varName + ' = ' + argument0 + ';\n';
+  return 'vars["' + varName + '"]=' + varName + ' = ' + argument0 + ';\n';
 };
