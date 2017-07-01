@@ -1,0 +1,23 @@
+<xml>
+	<type>feature</type>
+	<title>csv output</title>
+	<description>Takes a block of data and creates csv output</description>
+	<!-- With no <targetDirectory/> specified the default is the mixin directory such as "wwwpub\\blocklyCode\\mixin" -->
+	<location>blocklyCode</location>
+	<component type="define">
+		<file>csv_define.js</file>
+	</component>
+	<component type="edit">
+		<location>mixin</location>
+		<file>csv.js</file>
+		<!-- The language part will default to en if a match cannot be found -->
+		<locale>csv_{locale}.js</locale>
+		<!-- The target template -->
+		<template>index.html.template</template>
+	</component>
+	<component type="generate">
+		<location>mixin</location>
+		<file>csv_{language}.js</file>
+	</component>
+    
+</xml>
