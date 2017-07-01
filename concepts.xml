@@ -4,4 +4,5 @@
     -->
     <concept name='SQL' id='1'/>
     <concept name='Charts' id='2'/>
+    <concept name='Export' id='2'/>
   </concepts>
