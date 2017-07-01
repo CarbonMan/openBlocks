@@ -27,6 +27,14 @@ Blockly.JavaScript['task'] = function (block) {
 * program executes.
 * 'this' refers to context.vars
 */
+Blockly.JavaScript['variables_get'] = function(block) {
+  // Variable getter.
+  var varName = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'),
+      Blockly.Variables.NAME_TYPE);
+  var code = "vars['" + varName + "']";
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
 Blockly.JavaScript['variables_set'] = function(block) {
   // Variable setter.
   var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
