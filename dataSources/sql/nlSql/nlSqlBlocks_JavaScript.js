@@ -89,7 +89,7 @@ Blockly.JavaScript['nlsql_tsv'] = function (block) {
         Blockly.JavaScript.variableDB_.getName(block.getFieldValue('outputVariable'), Blockly.Variables.NAME_TYPE);
     // TSVfromSQL will send the input nlsql statement through the chat system and run it.
     // it returns a promise that resolves to the query output.
-    var code = "run.TSVfromSQL({\n" +
+    var code = "_.run.TSVfromSQL({\n" +
             "message: {" +
                 "value: " + "_.vars['" + inputVariable + "']\n" +
             "}" +
@@ -113,7 +113,7 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
         Blockly.JavaScript.variableDB_.getName(block.getFieldValue('outputVariable'), Blockly.Variables.NAME_TYPE);
     // sql2Array will send the input nlsql statement through the chat system and run it.
     // it returns a promise that resolves to the query output.
-    var code = "run.sql2Array({\n" +
+    var code = "_.run.sql2Array({\n" +
             "message: {" +
                 "value: " + "_.vars['" + inputVariable + "']\n" +
             "}" +
@@ -139,6 +139,7 @@ Blockly.JavaScript['nlsql_column_as'] = function (block) {
 /**
 * Operators
 */
+/*
 Blockly.JavaScript['logic_operation'] = function (block) {
     // Operations 'and', 'or'.
     var operator = (block.getFieldValue('OP') == 'AND') ? 'AND' : 'OR';
@@ -163,3 +164,4 @@ Blockly.JavaScript['logic_operation'] = function (block) {
     var code = argument0 + ' ' + operator + ' ' + argument1;
     return [code, order];
 };
+*/
