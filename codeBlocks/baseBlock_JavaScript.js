@@ -25,6 +25,7 @@ Blockly.JavaScript['task'] = function (block) {
 * stored within the context and passed between platforms. It is the only
 * way (for today) to get a coherent state across the different devices as a
 * program executes.
+* 'this' refers to context.vars
 */
 Blockly.JavaScript['variables_set'] = function(block) {
   // Variable setter.
@@ -33,5 +34,5 @@ Blockly.JavaScript['variables_set'] = function(block) {
       Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
   var varName = Blockly.JavaScript.variableDB_.getName(
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-  return 'this.vars["' + varName + '"]=' + varName + ' = ' + argument0 + ';\n';
+  return 'this["' + varName + '"]=' + varName + ' = ' + argument0 + ';\n';
 };
