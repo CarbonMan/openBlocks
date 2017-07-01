@@ -1,11 +1,11 @@
-Blockly.Blocks['nlsql_js'] = {
+Blockly.Blocks['csv'] = {
 	init: function () {
 		this.appendDummyInput()
-		        .appendField("Execute");
+		        .appendField(T$.i18n("Convert"));
 		this.appendDummyInput()
 			.appendField(new Blockly.FieldVariable("item"), "inputVariable");
 		this.appendDummyInput()
-			.appendField("output rows as csv");
+			.appendField(T$.i18n("into csv"));
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
 		this.setNextStatement(true, null);
