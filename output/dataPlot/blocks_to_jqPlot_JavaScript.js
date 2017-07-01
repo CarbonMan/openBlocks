@@ -12,7 +12,7 @@ Blockly.JavaScript['line_chart'] = function (block) {
         'context: me.context,' +
         'uid: me.uid,' +
         'threadId: me.threadId,' +
-        'data: ' + dataSource + ',' + 
+        'data: vars["' + dataSource + '"],' + 
         'firstColumnXaxisTicks:' + (firstcolumnxaxisticks ? "true" : "false") +
         '});\n';
     return code;
