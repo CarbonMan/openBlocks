@@ -98,8 +98,11 @@ Blockly.Blocks['nlsql_tableField'] = {
 Blockly.Blocks['nlsql_query'] = {
 	init: function () {
 		var queryDd = new Blockly.FieldDropdown([[T$.i18n('Query...'), ""]]);
-		T$.nlSql.blocks.setQuery(queryDd);
-		T$.nlSql.blocks.setValidQueries();
+		if (T$.nlSql.blocks){
+			// Running in the designer?
+			T$.nlSql.blocks.setQuery(queryDd);
+			T$.nlSql.blocks.setValidQueries();
+		}
 		this.appendDummyInput()
 		.appendField(queryDd, "query");
 		this.setOutput(true, "nlsql_namedQuery");
