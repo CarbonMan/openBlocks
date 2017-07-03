@@ -115,11 +115,11 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
     // it returns a promise that resolves to the query output.
     var code = "return _.run.sql2Array({\n" +
             "message: {" +
+                "uid: _.uid,\n" +
                 "value: " + "_.vars['" + inputVariable + "']\n" +
             "}" +
         "})\n"+
         ".then(function (value) {\n" + 
-            "debugger;\n" +
             "_.vars['" + outputVariable + "'] = value;\n" + 
         "})\n" + 
         ".catch(function(e){\n" +
