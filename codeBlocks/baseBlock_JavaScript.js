@@ -27,6 +27,7 @@ Blockly.JavaScript['task'] = function (block) {
 * program executes.
 * 'this' refers to context.vars
 */
+/*
 Blockly.JavaScript['variables_get'] = function(block) {
   // Variable getter.
   var varName = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'),
@@ -45,3 +46,4 @@ Blockly.JavaScript['variables_set'] = function(block) {
   // See nlsql_js for an example.
   return '_.vars["' + varName + '"]=' + varName + '=' + argument0 + ';\n';
 };
+*/
