@@ -113,7 +113,7 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
         Blockly.JavaScript.variableDB_.getName(block.getFieldValue('outputVariable'), Blockly.Variables.NAME_TYPE);
     // sql2Array will send the input nlsql statement through the chat system and run it.
     // it returns a promise that resolves to the query output.
-    var code = "return _.run.sql2Array({\n" +
+    var code = "debugger;return _.run.sql2Array({\n" +
             "message: {" +
                 "uid: _.uid,\n" +
                 "value: " + "_.vars['" + inputVariable + "']\n" +
