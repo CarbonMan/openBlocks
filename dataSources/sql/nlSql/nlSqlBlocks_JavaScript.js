@@ -91,6 +91,18 @@ Blockly.JavaScript['nlsql_tsv'] = function (block) {
     // it returns a promise that resolves to the query output.
     var code = "_.run.TSVfromSQL({\n" +
             "message: {" +
+                "value: " + inputVariable + "\n" +
+            "}" +
+        "})\n"+
+        ".then(function (value) {\n" + 
+            outputVariable + " = value;\n" + 
+        "})\n" + 
+        ".catch(function(e){\n" +
+            "throw e;\n" +
+        "});\n";
+    /*
+    var code = "_.run.TSVfromSQL({\n" +
+            "message: {" +
                 "value: " + "_.vars['" + inputVariable + "']\n" +
             "}" +
         "})\n"+
@@ -100,6 +112,7 @@ Blockly.JavaScript['nlsql_tsv'] = function (block) {
         ".catch(function(e){\n" +
             "throw e;\n" +
         "});\n";
+    */
     return code;
 };
 
@@ -116,6 +129,19 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
     var code = "debugger;return _.run.sql2Array({\n" +
             "message: {" +
                 "uid: _.uid,\n" +
+                "value: " + inputVariable + "\n" +
+            "}" +
+        "})\n"+
+        ".then(function (value) {\n" + 
+            outputVariable + " = value;\n" + 
+        "})\n" + 
+        ".catch(function(e){\n" +
+            "throw e;\n" +
+        "});\n";
+    /*
+    var code = "debugger;return _.run.sql2Array({\n" +
+            "message: {" +
+                "uid: _.uid,\n" +
                 "value: " + "_.vars['" + inputVariable + "']\n" +
             "}" +
         "})\n"+
@@ -125,6 +151,7 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
         ".catch(function(e){\n" +
             "throw e;\n" +
         "});\n";
+    */
     return code;
 };
 
