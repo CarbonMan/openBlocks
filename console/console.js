@@ -2,7 +2,7 @@ $(function () {
   // Build the debug category and load the block into it.
   // The blocks have a custom function toolbox$ to make it easier to 
   // centralize the code.
-  T$.on("load toolbox categories", function(ev){
+  T$_editor.on("load toolbox categories", function(ev){
     // Called once all openBlocks have been downloaded (see blocklyCode.js)
     var dbgCat = ev.toolbox.find("category[name='" + T$.i18n('Debug') + "']");
     if (!dbgCat.length) 
