@@ -29,8 +29,6 @@ Blockly.Blocks['nlsql_select_field'] = {
 		var tableFieldDd = new Blockly.FieldDropdown([["field", "field"]]);
 		var tableDd;
 		if (T$.nlSql.blocks){
-debugger;			
-			
 			tableDd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames, function (e) {
 				// Clear the field dropdown but keep the same reference to the array
 				// object
@@ -76,7 +74,6 @@ Blockly.Blocks['nlsql_tableField'] = {
 		var tableFieldDd = new Blockly.FieldDropdown([[T$.i18n('fields'), "field"]]);
 		var tableDd;
 		if (T$.nlSql.blocks){
-debugger;			
 			tableDd = new Blockly.FieldDropdown(T$.nlSql.blocks.tableNames, function (e) {
 				// Clear the field dropdown but keep the same reference to the array
 				// object
