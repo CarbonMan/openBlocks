@@ -3,14 +3,14 @@ $(function () {
     console.error(T$.i18n("nlSql environment is not available"));
     return;
   }
-  if (!T$.nlSql.dictionary){
-    console.error(T$.i18n("nlSql environment has no dictionary"));
+  if (!T$.db.dictionary){
+    console.error(T$.i18n("db environment has no dictionary"));
     return;
   }
   // This controls the context for blocks that need to refer to the dictionary
   T$_editor.on("resources setup", function(){
     T$.nlSql.blocks = new NlSqlDictionary({
-          dictionary: T$.nlSql.dictionary
+          dictionary: T$.db.dictionary
       });
     /*
 		T$.nlSql.blocks.on("add blocks", function () {
