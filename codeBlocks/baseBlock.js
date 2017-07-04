@@ -1,7 +1,7 @@
 /**
 * Requires eventTarget.js
 */
-T$.on("load toolbox categories", function(ev){
+T$_editor.on("load toolbox categories", function(ev){
   var cat = ev.toolbox.find("category[name='" + T$.i18n('Task') + "']");
   if (!cat.length) 
       cat = $("<category name='" + T$.i18n('Task') + "'></category>").appendTo(ev.toolbox);
