@@ -5,7 +5,6 @@ function NlSqlDictionary(opts) {
     eventHandler(me);
     me.primaryTable = "";
     me.relations = [];
-    debugger;
     me.dictionary = opts.dictionary;
     me.tableNames = [];
     me.queryDd = null;
