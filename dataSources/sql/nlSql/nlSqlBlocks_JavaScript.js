@@ -1,5 +1,4 @@
 Blockly.JavaScript['nlsql'] = function (block) {
-    //debugger;
     var context = Blockly.JavaScript.valueToCode(block, 'context', Blockly.JavaScript.ORDER_ATOMIC);
     console.log(context);
     // Columns to be returned
@@ -100,19 +99,6 @@ Blockly.JavaScript['nlsql_tsv'] = function (block) {
         ".catch(function(e){\n" +
             "throw e;\n" +
         "});\n";
-    /*
-    var code = "_.run.TSVfromSQL({\n" +
-            "message: {" +
-                "value: " + "_.vars['" + inputVariable + "']\n" +
-            "}" +
-        "})\n"+
-        ".then(function (value) {\n" + 
-            outputVariable + " = value;\n" + 
-        "})\n" + 
-        ".catch(function(e){\n" +
-            "throw e;\n" +
-        "});\n";
-    */
     return code;
 };
 
@@ -126,7 +112,7 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
         Blockly.JavaScript.variableDB_.getName(block.getFieldValue('outputVariable'), Blockly.Variables.NAME_TYPE);
     // sql2Array will send the input nlsql statement through the chat system and run it.
     // it returns a promise that resolves to the query output.
-    var code = "debugger;return _.run.sql2Array({\n" +
+    var code = "return _.run.sql2Array({\n" +
             "message: {" +
                 "uid: _.uid,\n" +
                 "value: " + inputVariable + "\n" +
@@ -138,20 +124,6 @@ Blockly.JavaScript['nlsql_js'] = function (block) {
         ".catch(function(e){\n" +
             "throw e;\n" +
         "});\n";
-    /*
-    var code = "debugger;return _.run.sql2Array({\n" +
-            "message: {" +
-                "uid: _.uid,\n" +
-                "value: " + "_.vars['" + inputVariable + "']\n" +
-            "}" +
-        "})\n"+
-        ".then(function (value) {\n" + 
-            "_.vars['" + outputVariable + "'] = value;\n" + 
-        "})\n" + 
-        ".catch(function(e){\n" +
-            "throw e;\n" +
-        "});\n";
-    */
     return code;
 };
 
